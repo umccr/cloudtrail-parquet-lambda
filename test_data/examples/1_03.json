@@ -1,0 +1,50 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.03",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:role-session",
+        "arn": "arn:aws:sts::123456789012:assumed-role/MyRole/role-session",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::123456789012:role/MyRole",
+            "accountId": "123456789012",
+            "userName": "MyRole"
+          },
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2016-03-14T13:51:37Z"
+          }
+        }
+      },
+      "eventTime": "2016-03-14T13:52:20Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "Encrypt",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.1",
+      "userAgent": "aws-sdk-java/1.11.0",
+      "requestParameters": {
+        "keyId": "arn:aws:kms:us-east-1:999999999999:key/mrk-EXAMPLE",
+        "encryptionAlgorithm": "SYMMETRIC_DEFAULT"
+      },
+      "responseElements": null,
+      "requestID": "3EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "eventID": "4EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "readOnly": false,
+      "resources": [
+        {
+          "ARN": "arn:aws:kms:us-east-1:999999999999:key/mrk-EXAMPLE",
+          "accountId": "999999999999",
+          "type": "AWS::KMS::Key"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    }
+  ]
+}

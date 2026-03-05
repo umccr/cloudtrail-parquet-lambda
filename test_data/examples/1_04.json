@@ -1,0 +1,28 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.04",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "AWS Internal"
+      },
+      "eventTime": "2016-11-12T03:08:04Z",
+      "eventSource": "rds.amazonaws.com",
+      "eventName": "ApplyPendingMaintenanceAction",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "rds.amazonaws.com",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "5EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "eventID": "6EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "eventType": "AwsServiceEvent",
+      "recipientAccountId": "123456789012",
+      "serviceEventDetails": {
+        "resourceId": "db-ABCDEFGHIJKL01234",
+        "resourceType": "RDS:DB",
+        "maintenanceAction": "system-update",
+        "maintenanceActionStatus": "pending-maintenance"
+      }
+    }
+  ]
+}

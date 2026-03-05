@@ -1,0 +1,44 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.01",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "EX_PRINCIPAL_ID",
+        "arn": "arn:aws:iam::123456789012:user/Alice",
+        "accessKeyId": "EXAMPLE_KEY_ID",
+        "accountId": "123456789012",
+        "userName": "Alice"
+      },
+      "eventTime": "2014-07-18T15:07:39Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.1",
+      "userAgent": "aws-cli/1.4.4",
+      "requestParameters": {
+        "roleName": "TestRole",
+        "assumeRolePolicyDocument": "{\"Version\":\"2012-10-17\"}"
+      },
+      "responseElements": {
+        "role": {
+          "roleName": "TestRole",
+          "roleId": "AROAI3FHNTUD3XMDE2RFF",
+          "arn": "arn:aws:iam::123456789012:role/TestRole",
+          "createDate": "Jul 18, 2014 3:07:39 PM",
+          "assumeRolePolicyDocument": "%7B%22Version%22%3A%222012-10-17%22%7D"
+        }
+      },
+      "requestID": "4EXAMPLE-7e2b-11e4-abb8-3f06f8f3935f",
+      "eventID": "aEXAMPLE-4a4f-4f2a-a7ed-c97a67b82974",
+      "readOnly": false,
+      "resources": [
+        {
+          "ARN": "arn:aws:iam::123456789012:role/TestRole",
+          "accountId": "123456789012",
+          "type": "AWS::IAM::Role"
+        }
+      ]
+    }
+  ]
+}

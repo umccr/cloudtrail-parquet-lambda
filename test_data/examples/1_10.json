@@ -1,0 +1,57 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.10",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:console-session",
+        "arn": "arn:aws:sts::123456789012:assumed-role/Admin/console-session",
+        "accountId": "123456789012",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::123456789012:role/Admin",
+            "accountId": "123456789012",
+            "userName": "Admin"
+          },
+          "attributes": {
+            "creationDate": "2024-01-15T10:00:00Z",
+            "mfaAuthenticated": "true",
+            "sessionCredentialFromConsole": "true"
+          }
+        }
+      },
+      "eventTime": "2024-01-15T10:05:33Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "ap-southeast-2",
+      "sourceIPAddress": "203.0.113.1",
+      "userAgent": "console.ec2.amazonaws.com",
+      "requestParameters": {
+        "filterSet": {},
+        "instancesSet": {}
+      },
+      "responseElements": null,
+      "requestID": "AEXAMPLE-1234-5678-abcd-EXAMPLE00001",
+      "eventID": "BEXAMPLE-1234-5678-abcd-EXAMPLE00002",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_256_GCM_SHA384",
+        "clientProvidedHostHeader": "ec2.ap-southeast-2.amazonaws.com"
+      },
+      "addendum": {
+        "reason": "UPDATED_DATA",
+        "updatedFields": "responseElements",
+        "originalUID": "BEXAMPLE-1234-5678-abcd-EXAMPLE00002",
+        "originalEventID": "BEXAMPLE-1234-5678-abcd-EXAMPLE00002"
+      }
+    }
+  ]
+}

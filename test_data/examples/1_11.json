@@ -1,0 +1,85 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGIEXAMPLE",
+        "arn": "arn:aws:iam::111122223333:user/Terry",
+        "accountId": "111122223333",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Terry",
+        "sessionContext": {
+          "attributes": {
+            "creationDate": "2024-06-01T08:00:00Z",
+            "mfaAuthenticated": "true",
+            "sessionCredentialFromConsole": "false"
+          }
+        }
+      },
+      "eventTime": "2024-06-01T08:12:47Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.0",
+      "userAgent": "aws-cli/2.15.0 Python/3.12.0",
+      "requestParameters": {
+        "bucketName": "my-secure-bucket",
+        "key": "uploads/data.parquet"
+      },
+      "responseElements": {
+        "x-amz-request-id": "EXAMPLE0REQID00001",
+        "x-amz-id-2": "EXAMPLEID2000001"
+      },
+      "additionalEventData": {
+        "SignatureVersion": "SigV4",
+        "CipherSuite": "TLS_AES_256_GCM_SHA384",
+        "bytesTransferredIn": 204800,
+        "bytesTransferredOut": 0,
+        "SSEApplied": "SSE-KMS",
+        "x-amz-id-2": "EXAMPLEID2000001"
+      },
+      "requestID": "EXAMPLE0REQID00001",
+      "eventID": "CEXAMPLE-1234-5678-abcd-EXAMPLE00003",
+      "readOnly": false,
+      "resources": [
+        {
+          "type": "AWS::S3::Object",
+          "ARN": "arn:aws:s3:::my-secure-bucket/uploads/data.parquet"
+        },
+        {
+          "accountId": "111122223333",
+          "type": "AWS::S3::Bucket",
+          "ARN": "arn:aws:s3:::my-secure-bucket"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Data",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_256_GCM_SHA384",
+        "clientProvidedHostHeader": "s3.us-east-1.amazonaws.com"
+      },
+      "eventContext": {
+        "requestContext": {
+          "conditionKeys": {
+            "aws:ViaAWSService": "false",
+            "aws:SecureTransport": "true",
+            "aws:MultiFactorAuthPresent": "false"
+          }
+        },
+        "tagContext": {
+          "resourceTags": [{
+            "arn": "arn:aws:s3:::my-secure-bucket",
+            "tags": {
+              "Environment": "prod",
+              "DataClassification": "sensitive"
+            }
+          }]
+        }
+      }
+    }
+  ]
+}

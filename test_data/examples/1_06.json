@@ -1,0 +1,50 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.06",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7EXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/Alice",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Alice"
+      },
+      "eventTime": "2019-10-01T18:13:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.100",
+      "userAgent": "aws-cli/1.16.248",
+      "requestParameters": {
+        "bucketName": "my-data-bucket",
+        "key": "reports/2019/report.csv"
+      },
+      "responseElements": null,
+      "additionalEventData": {
+        "SignatureVersion": "SigV4",
+        "CipherSuite": "ECDHE-RSA-AES128-SHA",
+        "bytesTransferredOut": 12345,
+        "x-amz-id-2": "EXAMPLE"
+      },
+      "requestID": "D81E97E4B3EEF04C",
+      "eventID": "7EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "readOnly": true,
+      "resources": [
+        {
+          "type": "AWS::S3::Object",
+          "ARN": "arn:aws:s3:::my-data-bucket/reports/2019/report.csv"
+        },
+        {
+          "accountId": "123456789012",
+          "type": "AWS::S3::Bucket",
+          "ARN": "arn:aws:s3:::my-data-bucket"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "123456789012",
+      "eventCategory": "Data"
+    }
+  ]
+}

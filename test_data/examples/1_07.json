@@ -1,0 +1,53 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.07",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:app-session",
+        "arn": "arn:aws:sts::111122223333:assumed-role/AppRole/app-session",
+        "accountId": "111122223333",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::111122223333:role/AppRole",
+            "accountId": "111122223333",
+            "userName": "AppRole"
+          },
+          "attributes": {
+            "creationDate": "2021-04-10T08:00:00Z",
+            "mfaAuthenticated": "false"
+          }
+        }
+      },
+      "eventTime": "2021-04-10T08:14:22Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "Decrypt",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.10",
+      "userAgent": "aws-sdk-java/2.17.0",
+      "requestParameters": {
+        "keyId": "arn:aws:kms:us-east-1:999988887777:key/mrk-EXAMPLE1234",
+        "encryptionAlgorithm": "SYMMETRIC_DEFAULT"
+      },
+      "responseElements": null,
+      "requestID": "AEXAMPLE-1234-5678-abcd-EXAMPLE00010",
+      "eventID": "BEXAMPLE-1234-5678-abcd-EXAMPLE00011",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "999988887777",
+          "type": "AWS::KMS::Key",
+          "ARN": "arn:aws:kms:us-east-1:999988887777:key/mrk-EXAMPLE1234"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Management",
+      "sharedEventID": "CEXAMPLE-1234-5678-abcd-EXAMPLE00099"
+    }
+  ]
+}

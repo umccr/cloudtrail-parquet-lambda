@@ -1,0 +1,33 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.02",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "EX_PRINCIPAL_ID",
+        "arn": "arn:aws:iam::123456789012:user/Alice",
+        "accessKeyId": "EXAMPLE_KEY_ID",
+        "accountId": "123456789012",
+        "userName": "Alice"
+      },
+      "eventTime": "2015-01-16T03:53:53Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.1",
+      "userAgent": "Mozilla/5.0",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "LoginTo": "https://console.aws.amazon.com/console/home",
+        "MobileVersion": "No",
+        "MFAUsed": "No"
+      },
+      "requestID": "1EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "eventID": "2EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",
+      "eventType": "AwsConsoleSignIn"
+    }
+  ]
+}

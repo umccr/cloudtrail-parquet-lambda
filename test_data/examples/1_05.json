@@ -1,0 +1,43 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.05",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIPFJYALOFOP2DK2SY",
+        "arn": "arn:aws:iam::123456789012:user/Administrator",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Administrator",
+        "sessionContext": {
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2018-10-21T09:17:01Z"
+          }
+        },
+        "invokedBy": "signin.amazonaws.com"
+      },
+      "eventTime": "2018-10-21T12:59:14Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetBucketLocation",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "12.34.56.78",
+      "userAgent": "signin.amazonaws.com",
+      "requestParameters": {
+        "bucketName": "my-bucket",
+        "location": [
+          ""
+        ]
+      },
+      "responseElements": null,
+      "additionalEventData": {
+        "vpcEndpointId": "vpce-aabbccdd00112233"
+      },
+      "requestID": "544A415A398A169C",
+      "eventID": "5989cc55-f752-468f-b669-f8abbeb008ba",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012",
+      "vpcEndpointId": "vpce-aabbccdd00112233"
+    }
+  ]
+}
