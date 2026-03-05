@@ -8,7 +8,9 @@ LICENSE
 .vscode
 .env
 .idea
+.github
 
 # Any other files or directories you want to exclude
 test_data/
 tests/
+terraform_example/

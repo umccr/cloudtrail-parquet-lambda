@@ -8,7 +8,7 @@ on:
       - '**.ts'
       - 'Dockerfile'
       - 'package.json'
-      - 'bun.lockb'
+      - 'bun.lock*'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
 
