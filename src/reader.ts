@@ -37,6 +37,8 @@ export async function* streamRecords(
     streamArray(),
   ]);
 
+  let skipped = 0;
+
   for await (const { value } of pipeline) {
     const et = value["eventTime"];
 
@@ -48,9 +50,14 @@ export async function* streamRecords(
         "encountered a CloudTrail entry that has no eventTime field",
       );
 
-    if (String(et).startsWith(eventTimePrefix)) yield value; else
-      console.log(`Skipping record with eventTime ${et}`);
+    if (String(et).startsWith(eventTimePrefix))
+      yield value;
+    else
+      skipped++;
   }
+
+  if (skipped > 0)
+    console.log(`Skipped ${skipped} CloudTrail entries that did not start with ${eventTimePrefix}`);
 }
 
 const isGzipped = (path: string): boolean =>

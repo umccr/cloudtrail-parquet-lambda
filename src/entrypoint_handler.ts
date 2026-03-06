@@ -47,6 +47,9 @@ function resolveDate(eventTime: string): {
     return { year: y, month: m, day: d };
   }
 
+  if (!eventTime)
+    throw new Error(`Invalid event.time passed in to the lambda`);
+
   // Default: yesterday relative to the event fire time
   const t = new Date(eventTime);
   t.setUTCDate(t.getUTCDate() - 1);

@@ -30,7 +30,10 @@ export async function convertSingleDayCloudTrailToParquets(
   parquetRowGroupsPerFile: number,
 ): Promise<void> {
   if (!baseInputPath.endsWith("/"))
-    throw new Error("basePath must end with a slash");
+    throw new Error("baseInputPath must end with a slash");
+
+  if (baseOutputPath && !baseOutputPath.endsWith("/"))
+    throw new Error("baseOutputPath must end with a slash if specified");
 
   const yearString = year.toString().padStart(4, "0");
   const monthString = month.toString().padStart(2, "0");
@@ -59,10 +62,7 @@ export async function convertSingleDayCloudTrailToParquets(
         dayString,
       );
 
-      console.log(`Will use the following log files:`);
-      for (const l of logsOfInterest) {
-        console.log(`  ${l}`);
-      }
+      console.log(`Will use the following log files\n` + JSON.stringify(logsOfInterest, null, 2));
 
       let parquetCounter = 0;
 
@@ -91,6 +91,9 @@ export async function convertSingleDayCloudTrailToParquets(
         }
         parquetCounter++;
       }
+
+      if (parquetCounter === 0)
+        console.log(`No CloudTrail entries found for ${account}${region}${yearString}/${monthString}/${dayString}`);
     }
   }
 }
@@ -224,8 +227,13 @@ export async function* convertSingle(
     batches.push(buildBatch(buffer));
   }
 
-  console.log(
-    `Yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
-  );
-  yield await writeBatchesToParquet(batches, compression);
+  if (recordsFound === 0) {
+    // if we actually found nothing at all then exit without having
+    // yielded
+  } else {
+    console.log(
+      `Yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
+    );
+    yield await writeBatchesToParquet(batches, compression);
+  }
 }
