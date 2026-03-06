@@ -70,6 +70,7 @@ export async function handler(
   // ── Required env vars ──────────────────────────────────────────────────────
   const basePath = process.env.CLOUDTRAIL_BASE_PATH;
   const outputPath = process.env.OUTPUT_PATH;
+  const accountId = process.env.ACCOUNT_ID;
 
   if (!basePath)
     throw new Error(
@@ -79,19 +80,24 @@ export async function handler(
     throw new Error(
       "Missing env var: OUTPUT_PATH (e.g. s3://my-output-bucket/parquet/)",
     );
+  if (!accountId)
+    throw new Error(
+      "Missing env var: ACCOUNT_ID (e.g. 3453464564)",
+    );
 
   // ── Optional env vars ──────────────────────────────────────────────────────
   const organisationId = process.env.ORGANISATION_ID ?? null; // null = no org prefix
 
   const { year, month, day } = resolveDate(event.time);
   console.log(
-    `Processing CloudTrail logs for ${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+    `Processing CloudTrail logs for ${accountId} for ${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
   );
 
   await convertSingleDayCloudTrailToParquets(
     basePath,
     outputPath,
     organisationId,
+    accountId,
     year,
     month,
     day,

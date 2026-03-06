@@ -13,6 +13,7 @@ import { listChildFiles } from "./lister_files";
  * @param baseInputPath the base path to read the CloudTrail files from including trailing slash
  * @param baseOutputPath the base path to write the parquet files to including trailing slash (or null to disable writing)
  * @param organisationId an organisation id to use in finding CloudTrails or null for single account style
+ * @param accountId the account id to process
  * @param year
  * @param month
  * @param day
@@ -23,6 +24,7 @@ export async function convertSingleDayCloudTrailToParquets(
   baseInputPath: string,
   baseOutputPath: string | null,
   organisationId: string | null,
+  accountId: string,
   year: number,
   month: number,
   day: number,
@@ -43,58 +45,58 @@ export async function convertSingleDayCloudTrailToParquets(
     ? `${baseInputPath}AWSLogs/${organisationId}/`
     : `${baseInputPath}AWSLogs/`;
 
-  const accounts = await listChildFolders(awsLogsBaseInputPathWithOrg);
+  const awsCloudTrailLogsBasePath = `${awsLogsBaseInputPathWithOrg}${accountId}/CloudTrail/`;
 
-  for (const account of accounts) {
-    const awsCloudTrailLogsBasePath = `${awsLogsBaseInputPathWithOrg}${account}CloudTrail/`;
+  const regions = await listChildFolders(awsCloudTrailLogsBasePath);
 
-    const regions = await listChildFolders(awsCloudTrailLogsBasePath);
+  for (const region of regions) {
+    const logsOfInterest = await findAllPossibleDayLogs(
+      `${awsCloudTrailLogsBasePath}${region}`,
+      yearString,
+      monthString,
+      dayString,
+    );
 
-    for (const region of regions) {
-      console.log(
-        `Inspecting region ${region} in account ${account} at ${awsCloudTrailLogsBasePath}`,
-      );
-
-      const logsOfInterest = await findAllPossibleDayLogs(
-        `${awsCloudTrailLogsBasePath}${region}`,
-        yearString,
-        monthString,
-        dayString,
-      );
-
-      console.log(`Will use the following log files\n` + JSON.stringify(logsOfInterest, null, 2));
-
-      let parquetCounter = 0;
-
-      for await (const pq of convertSingle(
-        logsOfInterest,
-        `${yearString}-${monthString}-${dayString}T`,
-        parquetEntriesPerRowGroup,
-        parquetRowGroupsPerFile,
-      )) {
-        // in the case where we have no output and are just simulating, make a fake path
-        const base = baseOutputPath ? baseOutputPath : "<outputPath>/";
-
-        const output = organisationId
-          ? `${base}AWSLogsParquet/CloudTrail/${organisationId}/account=${account}region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
-          : `${base}AWSLogsParquet/CloudTrail/account=${account}region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
-
-        if (baseOutputPath) {
-          console.log(
-            `Actually writing Parquet of size ${pq.length} to ${output}`,
-          );
-          await writeBytes(output, pq);
-        } else {
-          console.log(
-            `Proposing writing Parquet of size ${pq.length} to ${output}`,
-          );
-        }
-        parquetCounter++;
-      }
-
-      if (parquetCounter === 0)
-        console.log(`No CloudTrail entries found for ${account}${region}${yearString}/${monthString}/${dayString}`);
+    if (logsOfInterest.length === 0) {
+      continue;
     }
+    console.log(
+      `Inspecting region ${region} in account ${accountId} at ${awsCloudTrailLogsBasePath} gives the following logs\n` +
+        JSON.stringify(logsOfInterest, null, 2),
+    );
+
+    let parquetCounter = 0;
+
+    for await (const pq of convertSingle(
+      logsOfInterest,
+      `${yearString}-${monthString}-${dayString}T`,
+      parquetEntriesPerRowGroup,
+      parquetRowGroupsPerFile,
+    )) {
+      // in the case where we have no output and are just simulating, make a fake path
+      const base = baseOutputPath ? baseOutputPath : "<outputPath>/";
+
+      const output = organisationId
+        ? `${base}AWSLogsParquet/CloudTrail/${organisationId}/account=${accountId}/region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
+        : `${base}AWSLogsParquet/CloudTrail/account=${accountId}/region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
+
+      if (baseOutputPath) {
+        console.log(
+          `Actually writing Parquet of size ${pq.length} to ${output}`,
+        );
+        await writeBytes(output, pq);
+      } else {
+        console.log(
+          `Proposing writing Parquet of size ${pq.length} to ${output}`,
+        );
+      }
+      parquetCounter++;
+    }
+
+    if (parquetCounter === 0)
+      console.log(
+        `No CloudTrail entries found for ${accountId}${region}${yearString}/${monthString}/${dayString}`,
+      );
   }
 }
 

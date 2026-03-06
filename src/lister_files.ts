@@ -65,7 +65,6 @@ function listLocalChildFiles(dirPath: string): Promise<string[]> {
     }
     catch (err: any) {
       if (err.code === "ENOENT") {
-        console.log("Directory does not exist");
       } else {
         throw err; // re-throw unexpected errors
       }
