@@ -5,7 +5,7 @@ import { Compression } from "parquet-wasm";
 import { getFirstConversion } from "./convert_helper";
 
 test("1.11", async () => {
-  const pq = await getFirstConversion("test_data/examples/1_11.json", "");
+  const pq = await getFirstConversion("test_input/examples/1_11.json", "");
   const rows = await readParquetBuffer(pq);
 
   expect(rows).toBeArrayOfSize(1);

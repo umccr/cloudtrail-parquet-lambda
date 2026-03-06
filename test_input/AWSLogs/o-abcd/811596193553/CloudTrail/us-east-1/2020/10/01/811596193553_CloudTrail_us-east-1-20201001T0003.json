@@ -1,0 +1,30 @@
+{
+  "Records": [
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "9948a30a-6530-4901-aeda-f8005ae1c099",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:DescribeAgents",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.200",
+      "eventName": "DescribeAgents",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "999994cf-dbad-4a0b-8bca-9997c5b6f849",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-10-01T00:03:45Z"
+    }
+  ]
+}
+

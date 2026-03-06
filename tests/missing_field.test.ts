@@ -6,10 +6,14 @@ import { Compression } from "parquet-wasm";
 test("missing field but schema version says it is mandatory", async () => {
 
   const asyncThrower = async () => {
-    for await (const pq of convertSingle("test_data/examples/bad1_01.json", "", Compression.SNAPPY)) {
-      break;
-    }
+    await convertSingle(
+      ["test_input/examples/bad1_01.json"],
+      "",
+      100,
+      1,
+      Compression.SNAPPY,
+    ).next();
   };
 
-  await expect(asyncThrower()).rejects.toThrow("this field was null");
+  expect(asyncThrower()).rejects.toThrow("this field was null");
 });

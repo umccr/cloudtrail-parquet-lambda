@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * local-invoke.ts
+ * test-local-invoke.ts
  *
  * Runs the Lambda handler locally with a mock EventBridge Scheduled Event.
  * Uses the same env-var contract as the real Lambda so you can test end-to-end
@@ -12,15 +12,15 @@
  *   CLOUDTRAIL_BASE_PATH=test_data/ OUTPUT_PATH=/tmp/parquet-out/ bun run local-invoke.ts
  */
 
-import { entrypoint_handler } from './src/entrypoint_handler';
+import { handler } from './src/entrypoint_handler';
 
 // ── Default env for local runs ─────────────────────────────────────────────
 // Override any of these via environment variables before running.
 
-process.env.CLOUDTRAIL_BASE_PATH ??= 'test_data/';
-process.env.OUTPUT_PATH          ??= '/tmp/cloudtrail-parquet/';
+process.env.CLOUDTRAIL_BASE_PATH ??= 'test_input/';
+process.env.OUTPUT_PATH          ??= 'test_output/';
 process.env.ORGANISATION_ID      ??= 'o-abcd';
-process.env.PROCESS_DATE      = '2020-09-21'; // uncomment to pin a date
+process.env.PROCESS_DATE      = '2020-09-30';
 
 // ── Mock EventBridge Scheduled Event ──────────────────────────────────────
 // `time` is set to "tomorrow" so that resolveDate() lands on today when
@@ -55,7 +55,7 @@ console.log('  PROCESS_DATE         =', process.env.PROCESS_DATE ?? '(not set �
 console.log('───────────────────────────────────────────────────────────\n');
 
 try {
-    await entrypoint_handler(mockEvent, mockContext);
+    await handler(mockEvent, mockContext);
     console.log('\n✅  Handler completed successfully.');
 } catch (err) {
     console.error('\n❌  Handler threw an error:');

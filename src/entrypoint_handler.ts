@@ -1,4 +1,4 @@
-import { cloudtrailToParquet } from "./entrypoint_cli";
+import { convertSingleDayCloudTrailToParquets } from "./converter";
 
 /**
  * EventBridge Scheduled Event (cron) shape.
@@ -85,13 +85,15 @@ export async function handler(
     `Processing CloudTrail logs for ${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
   );
 
-  await cloudtrailToParquet(
+  await convertSingleDayCloudTrailToParquets(
     basePath,
+    outputPath,
     organisationId,
     year,
     month,
     day,
-    outputPath,
+    50000,
+    5
   );
 
   console.log("Done.");

@@ -6,7 +6,10 @@ import { getFirstConversion } from "./convert_helper";
 
 test("1.01", async () => {
 
-  const pq = await getFirstConversion("test_data/examples/1_01.json", "");
+  const pq = await getFirstConversion(
+    "test_input/examples/1_01.json",
+    "2014-07-18",
+  );
   const rows = await readParquetBuffer(pq);
 
   expect(rows).toBeArrayOfSize(1);

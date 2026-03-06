@@ -3,7 +3,9 @@ import { convertSingle } from "../src/converter";
 
 export async function getFirstConversion(inputPath: string, eventTimePrefix: string) {
   for await (const pq of convertSingle(
-    inputPath, eventTimePrefix,
+    [inputPath], eventTimePrefix,
+    100,
+    1,
     Compression.SNAPPY,
   )) {
     if (pq)

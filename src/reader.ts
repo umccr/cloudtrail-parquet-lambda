@@ -48,7 +48,8 @@ export async function* streamRecords(
         "encountered a CloudTrail entry that has no eventTime field",
       );
 
-    if (String(et).startsWith(eventTimePrefix)) yield value;
+    if (String(et).startsWith(eventTimePrefix)) yield value; else
+      console.log(`Skipping record with eventTime ${et}`);
   }
 }
 

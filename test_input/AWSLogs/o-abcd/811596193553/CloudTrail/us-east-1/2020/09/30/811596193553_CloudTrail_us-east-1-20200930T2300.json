@@ -1,0 +1,3789 @@
+{
+  "Records": [
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "4a48a30a-6530-4901-aeda-f8005ae1c003",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:DescribeAgents",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeAgents",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "99a544cf-dbad-4a0b-8bca-eab7c5b6f849",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "7111ab76-cb02-4627-96d3-754ec5aaab1c",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListModelPackages",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b443b047-9559-4c5d-a326-d1ef4fbf4d4e",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "0d665d9f-52a5-4eea-beb5-6451d0957f06",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetSecurityConfigurations",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetSecurityConfigurations",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "d76f0ba5-cd75-4c81-b657-b8687bdf0998",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "8f92201c-cbe4-422d-b2bb-9e9125f6acef",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: waf-regional:ListIPSets on resource: arn:aws:waf-regional:us-east-1:811596193553:ipset/*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListIPSets",
+      "eventSource": "waf-regional.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "d33c9586-6050-4e50-b1f6-5f6b7ed099af",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "f29aaee9-aa93-4d75-ba2c-ae6f526af1eb",
+      "errorMessage": "An unknown error occurred",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIAP2Z9A0YF04B7G2LQ",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetCatalogImportStatus",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "43994e54-6c4b-4b4f-9816-0b1c364604d9",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "fbdc1b52-0bb9-4f32-9b13-100343d6223e8",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListApps",
+      "eventSource": "amplify.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "cee87f80-3a51-42fe-aaf3-4b7e8e7432c8",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "249e1038-7ba5-44bf-84a3-2eb057df87c7",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeTableRestoreStatus",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "5f93a0e6-dc18-4f52-986c-49f69191254c",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "a955e432-a0cc-42da-afb8-541dc22bfff8",
+      "errorMessage": "Either Direct Connect Gateway ID or Associated Gateway ID or Association ID must be set",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "DirectConnectClientException",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeDirectConnectGatewayAssociations",
+      "eventSource": "directconnect.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b337fe40-c5e5-4174-8b6e-a7ad3107ff32",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "959a3763-e7ae-48db-a1e7-12fab5f6304b",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListResourceDefinitions",
+      "eventSource": "greengrass.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "c4aec245-1eae-4fa2-ab15-68260dddeb",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "79068da-db3b-4e1f-86eb-50dc3771892b",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: config:GetDiscoveredResourceCounts",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetDiscoveredResourceCounts",
+      "eventSource": "config.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "23ec8388-1fdb-47c0-ad3e-a67fafa8daa1",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "69022e-6ffa-4b84-a939-655cb8fa7185",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: ssm:ListCommands on resource: arn:aws:ssm:us-east-1:811596193553:*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListCommands",
+      "eventSource": "ssm.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "a48556d-cac5-433d-98cf-0924a465a22e",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "68bde0f4-0633-48b5-ad7b-b1be85daf0fe",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:DescribeContinuousExports",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeContinuousExports",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b4477eb3-428b-4c3a-b5e1-571d07a041f2",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:39Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "dd6eb6c3-3955-463e-b429-4ce60509c5",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetAccountAuthorizationDetails",
+      "eventSource": "iam.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "e63120-f447-400e-9aa0-dc59c95c9e37",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "784870c6-e3e2-4617-b4cf-a5f30787dd7f",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:ListCrawlers",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListCrawlers",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "66dc5d98-9468-4a37-9e4d-75d6251a6d0c",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "74ccf038-6cd9-4c76-9e8e-55af7d023e00",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:DescribeImportTasks",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeImportTasks",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "6708e9c4-9570-4e31-b677-a0b92d31ce12",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "cf489be8-c976-429f-943e-3e5b53e8f14e",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListJobs",
+      "eventSource": "mediaconvert.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "cc6e0707-a956-4e37-a08a-854d0cd894bc",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "d22b230d-4cf7-4a02-a442-00055ff373",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListWorkGroups",
+      "eventSource": "athena.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "72be1ddc-25bb-4683-8928-9464d503889",
+      "responseElements": {
+        "workGroups": [
+          {
+            "name": "primary",
+            "state": "ENABLED",
+            "description": "",
+            "creationTime": "Oct 21, 2019 5:23:53 AM",
+            "engineVersion": {
+              "selectedEngineVersion": "AUTO",
+              "effectiveEngineVersion": "Athena Engine 1"
+            }
+          }
+        ]
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "c5ef3dd3-fa44-43e4-a762-8938d4cb44f7",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeEndpoints",
+      "eventSource": "mediaconvert.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "614882c68-1380-42fa-b458-5309a273c161",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "642970-6fb1-4c44-b530-11b0fa7769ba",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListHealthChecks",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "bddfe0c4-61a0-4737-aa41-52b7a979080eb",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "9e84fbc0-c3d2-48f3-bacc-3e30d6bce37c",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListHostedZonesByName",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "26490b8e-b461-4989-bee2-1cf901256f568",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "55f3c95e-ac20-4148-ab4f-f9a7d722c838",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListQueryLoggingConfigs",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "55f75921-908a-4466-8c28-74aa2a24a6d7",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "apigateway.amazonaws.com",
+      "eventID": "58f75db7-0e7d-479f-81d0-51522cd25f",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIARJ87YYFG1H65SS65",
+        "userName": "Level6",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2020-09-21T23:53:40Z"
+          }
+        },
+        "invokedBy": "apigateway.amazonaws.com"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "apigateway.amazonaws.com",
+      "eventName": "ListStreams",
+      "eventSource": "iot.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": {
+        "ascendingOrder": false
+      },
+      "awsRegion": "us-east-1",
+      "requestID": "0e2fc04c-c954-44f7-96fb-0acb5c8b3371",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "22392d9-498c-421a-9262-7b301a6e4e16",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:ListDevEndpoints",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListDevEndpoints",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "5e3a353e-9b80-4ddc-829b-911e63125065",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "14883-520d-4c15-8b75-45606dbf4bb8",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetCrawlers",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetCrawlers",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "36847-9bf7-464e-ac79-0c2c48fccb2a",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "81f2b549-74c3-44b3-a40a-1bc7ad3e79ba",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: kinesisvideo:ListStreams",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListStreams",
+      "eventSource": "kinesisvideo.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "81c3747f-86fd-4fe4-bae1-1ddca8ea1fab",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "d89bb7b5-c241-41c7-94e7-59efa27f62b5",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeMetricFilters",
+      "eventSource": "logs.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "1fe55f3f-c62f-47ec-9521-42d450631",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "55606",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "5beb3300-f4bc-49e2-899e-4603a16b3c25",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListQueryExecutions",
+      "eventSource": "athena.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "88ca8fe8-1302-4ec0-a7a9-157821365122",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "d95bbbf2-b4eb-4754-9b7b-3e2ac74a0235",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeConnections",
+      "eventSource": "directconnect.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "ec50e0ea-0c2f-4579-aa83-e52a44f394e9",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "caf194f0-686e-4078-a407-d5fc711007f27",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeLags",
+      "eventSource": "directconnect.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "3a3a7504-4c70-4be7-bf1c-760a84a8c5d2",
+      "responseElements": {
+        "lags": []
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "4fc03f3d-ccce-494a-9fd4-c50daf26d85b",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeDirectConnectGateways",
+      "eventSource": "directconnect.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "db9eed1d-6087-4a62-8c12-7b1a9fef7fbb",
+      "responseElements": {
+        "directConnectGateways": []
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "1f9e0135-d41f-4abd-9c42-9529ca304185",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetJobs",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetJobs",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "3d5d8b67-684d-4b83-8302-c54bc3fd3618",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "e17c984f-9018-464a-92e3-18e715e114947",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:GetDiscoverySummary",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetDiscoverySummary",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "c565185e-405c-4950-b99b-0c462f844cf0",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "30f675f8-8c84-47f8-9feb-ce26b67effab",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: snowball:GetSnowballUsage",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetSnowballUsage",
+      "eventSource": "snowball.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "2ea37d15-daf2-46e1-a910-3dccb12b8c19",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "f054ec57-5d88-4c4f-ba51-8931fa7c0378",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: fms:ListMemberAccounts on resource: arn:aws:fms:*:811596193553:*/*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListMemberAccounts",
+      "eventSource": "fms.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "328590e5-112b-45a2-bcdf-47bad609ebd6",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "eeb3eb30-2571-48d9-8986-ab826799a7",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: appmesh:ListMeshes on resource: arn:aws:appmesh:us-east-1:811596193553:mesh/*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListMeshes",
+      "eventSource": "appmesh.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "1d322f07-7f8f-47eb-9636-499d0415cb64",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "32fddd22-5c1f-4901-8329-e118eb06f582",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListContainers",
+      "eventSource": "mediastore.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "DRJVNY2PYNVCL573ETBSFF7BE53LDD2XAHJX7C4AXIOD5KOGWG43TZQVV5EAUWWMKPAAOGR4H775KGUTGPNKH7R",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "386551c5-2806-45c1-bc0e-aed5544ec911",
+      "errorMessage": "An unknown error occurred",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIAVA0WESZ9E7X5WPBB",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetResourcePolicy",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "d00d2872-4e60-461f-86ae-efe98c26ae99",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "4ac90ceb-d9f3-4f16-af32-17785effeb2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeOrderableClusterOptions",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "f73c1926-3377-41e7-92cc-0e7d6c38d852",
+      "responseElements": {
+        "orderableClusterOptions": [
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "dc2.8xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "dc2.large",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "single-node",
+            "nodeType": "dc2.large",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "ds2.8xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "ds2.xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "single-node",
+            "nodeType": "ds2.xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1e",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "dc1.8xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "dc1.large",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "single-node",
+            "nodeType": "dc1.large",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "EC2"
+                  },
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "ra3.16xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "clusterVersion": "1.0",
+            "clusterType": "multi-node",
+            "nodeType": "ra3.4xlarge",
+            "availabilityZones": [
+              {
+                "name": "us-east-1a",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1b",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1c",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1d",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              },
+              {
+                "name": "us-east-1f",
+                "supportedPlatforms": [
+                  {
+                    "name": "VPC"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "99d244f0-5161-4e11-a683-ef79127c7",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeClusterSecurityGroups",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "944ee3eb-1555-4ac3-9e46-43bc290b13ad",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "c74b9599-55b9-4080-a657-d01f1282ef5b",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: config:DescribeDeliveryChannels",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeDeliveryChannels",
+      "eventSource": "config.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "3f4ef72f-0aa4-4ed5-9367-8abcc4f42e33",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "b580118c-f4e7-40ea-afd9-f65fe89734a",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:ListJobs",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListJobs",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "662b9f13-0777-4f37-a0b8-1f509bef617f",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "c40b4381-e856-40c7-a9ad-3d70bff61da7",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeClusters",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "a9ecf17d-dd30-4aab-9804-eae95e69859",
+      "responseElements": {
+        "clusters": []
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "817fcb6f-d22f-4be1-9d2f-5fe0650466df",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: discovery:DescribeExportConfigurations",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeExportConfigurations",
+      "eventSource": "discovery.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "9e92f0c6-44bc-4c61-a39f-5be7b84141bc",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "8ad2e2f5-0737-4b26-860f-2cd805d68c47",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: sms:GetApp",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetApp",
+      "eventSource": "sms.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "41aa697b-bab3-47f9-892c-6dc4cc52a2d3",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "95ef5165-d73c-4337-aa2d-591bc9f9bcaf",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetDataflowGraph",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetDataflowGraph",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "7e9f1847-5ac6-48df-981f-7034c903fa43",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "20ef46a8-a53a-4b9f-9f27-cf67fa096552b",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListCompilationJobs",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "8d1dbf7a-e4c3-4bc6-9928-5575e79b39ae",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "61744c3-e0cd-4525-b4b1-efa8d963957",
+      "errorMessage": "You don't have the IAM role and permissions to access the AWS Marketplace. Check the AWS Marketplace for the correct permissions. Update your user and try the request again.",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "ValidationException",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListSubscribedWorkteams",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "91f3c2c8-0ea5-47cb-85ed-3e1f32826c60",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "02fd9b24-4651-4a53-9c7d-412970475a55",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListTrainingJobs",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "c5dc74d6-44d1-4b87-84f5-5c501b650f8e",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "f4589c9f-9a27-40f7-b6a5-f1cfd60bbf16",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListHyperParameterTuningJobs",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "0077bc83-406e-49bb-a667-24036b30a0",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "b68e3a31-cf0b-424e-a99c-e38f80836491",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListNotebookInstances",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "996861afb-5feb-4176-b0e5-665f15d2e8a8",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "88cdd903-def3-46aa-a3d4-8bb1eeb708d3",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: waf-regional:ListRegexMatchSets on resource: arn:aws:waf-regional:us-east-1:811596193553:regexmatch/*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListRegexMatchSets",
+      "eventSource": "waf-regional.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "52c17025-c2d3-4af8-84db-dc4aa32afbeb",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "59eb6ed3-c24e-4ad4-bc86-9ce4d21818b9",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: SNS:ListTopics on resource: arn:aws:sns:us-east-1:811596193553:*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListTopics",
+      "eventSource": "sns.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b232a193-a46c-5f91-aff8-f739227f871",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "7761eb7a-5396-4f8e-a874-22a1c88c009c",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: SNS:ListSubscriptions on resource: arn:aws:sns:us-east-1:811596193553:*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListSubscriptions",
+      "eventSource": "sns.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "61083e31-e81f-5a60-b7d6-69d2d92b8d80",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "8b7e0041-9299-449e-bbe0-143e8a89d50a",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: SNS:GetSMSAttributes on resource: arn:aws:sns:us-east-1:811596193553:*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetSMSAttributes",
+      "eventSource": "sns.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "001bed03-52b3-58e4-8be2-bae66524cf04",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "ef8ef96b-8ff3-4e32-9fad-4d9a052a8550",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetTriggers",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetTriggers",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "6abfdce9-a844-43ec-a21f-2196f64fc54d",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "3f27e890-b673-40d5-a556-33de37c2cfa0",
+      "errorMessage": "An unknown error occurred",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIAQFWYVNGZGJ74DEL4",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetDatabases",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "48cea605-e4b4-4793-a5dd-ae48126d947a",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "a49a5932-dd9b-4724-a022-203802ec9cc6",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListCodeRepositories",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "f70526ae-d4fc-46f7-92c8-d6d24d8f92fb",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "a76dc294-4b48-4285-b71e-86b08752bd15",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListLabelingJobs",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "1c6dea73-2446-4883-abde-ca4a83bddecf",
+      "responseElements": {
+        "labelingJobSummaryList": []
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "07bcc904-db01-435c-b233-58e3ae680f6a",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListNotebookInstanceLifecycleConfigs",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "a47a3057-f636-4540-a405-f7cf2e0cdff1",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "5ab863113-bbad-4f63-9bf2-16be1d5d1a3f",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetCrawlerMetrics",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetCrawlerMetrics",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "13b2fed7-9229-40a5-91e6-def880b4ef12",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "1a5f1e26-421f-4640-b8fc-b806cad55dd9",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListNamedQueries",
+      "eventSource": "athena.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b44742dc-6155-4f6e-aa7a-81fd28d983f6",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "717299b8-a12d-496d-bb41-12a24ba3a7cd",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: mediastore:DescribeContainer on resource: arn:aws:mediastore:us-east-1:811596193553:container/null",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeContainer",
+      "eventSource": "mediastore.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "EO2BHTIE5IDXCYKHE5P5PBTMZC3ZSYCZS4THEV7KSRWKKYZEFJF5OB5IQLGYD2CVZORCYBYPYUTT5P5UBXUMEQZ",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "de802f7f-7a29-443b-b0d1-52194eb7a",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetLifecyclePolicies",
+      "eventSource": "dlm.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "8977ced9-0f34-413a-86f8-59f008e275f6",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "10d609333-18e9-474e-8478-9a6c222eb14f",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:GetDevEndpoints",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetDevEndpoints",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "f98364-77f9-4ca6-93a4-d98e3d8e759b",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:40Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "7826e114-7d58-440f-b3e1-83f30a8eade7",
+      "errorMessage": "An unknown error occurred",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIAKMGQRRSASA8FDTWJ",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetConnections",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": {
+        "hidePassword": false
+      },
+      "awsRegion": "us-east-1",
+      "requestID": "520158baf-6066-410f-a090-ea736f5fb469",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "df2a14e1-3a97-4401-8958-e4bef7fcbd99",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: xray:GetSamplingRules",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetSamplingRules",
+      "eventSource": "xray.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "aa28a72a-29cd-4cc7-a28d-1f9fca6de0f0",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "a872fe39-4f55-4b20-a1b5-ee707e34f27c",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListStreamProcessors",
+      "eventSource": "rekognition.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "32808a-8775-4c91-9aa9-57645b907992",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "f309c654-cc5e-4571-86ef-332861b87ca2",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetHealthCheckCount",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "c539b24f-ed2b-4aec-8d49-1ee091337ecba",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "a758e26b-12bd-4712-9658-bcb2e5a460147",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListReusableDelegationSets",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "6fda665e-c0d5-41ce-9d47-03d45c5cd7ed",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "4e848541-cffb-457d-8694-e56a0cf3fe21",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListTrafficPolicies",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "2a28449-25f1-4c03-a581-8a88a3612f75",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "6a4073d5-77d6-4bb3-a3d9-44ce4d4a4167",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListTrafficPolicyInstances",
+      "eventSource": "route53.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "cc6019a3-0e53-425f-90a4-590c9f91d839",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "apiVersion": "2013-04-01",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "f568ec16-aaab-4321-8f1d-1c46b699d6b4",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: xray:GetGroups",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetGroups",
+      "eventSource": "xray.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "9d3e76cf-7e1b-47b6-9fe8-35615d9eb",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "b32494-54ae-4caa-9d46-57052f06e4a5",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: xray:GetEncryptionConfig",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetEncryptionConfig",
+      "eventSource": "xray.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "d86c83a9-7330-4587-8afe-5e67422a6fd4",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "0f5d70d4-f1f8-48b8-af91-c2ce4a8a4f25",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeDBParameterGroups",
+      "eventSource": "rds.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "f918a4e4-70f0-48ec-a632-ac574c3fe08e",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "apigateway.amazonaws.com",
+      "eventID": "651e6668-83b1-41f6-8cb4-eaf79cd0682d",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIARJ87YYFG1H65SS65",
+        "userName": "Level6",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2020-09-21T23:53:40Z"
+          }
+        },
+        "invokedBy": "apigateway.amazonaws.com"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "apigateway.amazonaws.com",
+      "eventName": "ListActiveViolations",
+      "eventSource": "iot.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "d855d3c2-1a2b-4938-8e7d-4937d902ce86",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "2a16807-d325-42c9-a98b-ec2755f1ff48",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListEndpoints",
+      "eventSource": "sagemaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "6332c00c-7739-4402-a48a-cfdfac349102",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "cf8d1c28-ce03-4765-a464-e69adf5afd26",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: glue:ListTriggers",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListTriggers",
+      "eventSource": "glue.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "6776c30f-8eca-46d3-8e5d-b45ca4777e2f",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "apigateway.amazonaws.com",
+      "eventID": "ae526ed7-ce56-4ee4-8072-962306f26e5d",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIARJ87YYFG1H65SS65",
+        "userName": "Level6",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2020-09-21T23:53:40Z"
+          }
+        },
+        "invokedBy": "apigateway.amazonaws.com"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "apigateway.amazonaws.com",
+      "eventName": "ListThingTypes",
+      "eventSource": "iot.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "b3dbf25b-1767-4aa3-8184-32033b0cae3",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "apigateway.amazonaws.com",
+      "eventID": "e5441a6f-60d6-4e25-b118-a54d97222",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "ASIARJ87YYFG1H65SS65",
+        "userName": "Level6",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "false",
+            "creationDate": "2020-09-21T23:53:40Z"
+          }
+        },
+        "invokedBy": "apigateway.amazonaws.com"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "apigateway.amazonaws.com",
+      "eventName": "ListJobs",
+      "eventSource": "iot.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "2a9bb087-d1b8-462f-80d5-74ede291521a",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "729525d0-c649-4dc1-909e-8061a8d86afc",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: snowball:ListClusters",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListClusters",
+      "eventSource": "snowball.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "4105b4dc-bc48-4040-8974-752778dd7888b",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "5d8029a7-6172-4134-8c1c-57acb6a518c3",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: appmesh:ListMeshes on resource: arn:aws:appmesh:us-east-1:811596193553:mesh/*",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListMeshes",
+      "eventSource": "appmesh.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "f551027e-ba4b-4845-bbf3-c286ececd3e7",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "c2635a22-6b39-4f21-94b2-738e8cdf134b",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeEventCategories",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "56422ff-da64-41c2-95d6-2fee73c3f040",
+      "responseElements": {
+        "eventCategoriesMapList": [
+          {
+            "sourceType": "cluster",
+            "events": [
+              {
+                "eventId": "REDSHIFT-EVENT-2000",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster <cluster name> created at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2001",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster <cluster name> deleted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3000",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> rebooted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3014",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Amazon Redshift rebooted cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3001",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> node replaced at <time in UTC>. Cluster operating normally.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4000",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "Master credentials updated for cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1000",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Parameter group <parameter group name> changes were associated with cluster <cluster name> at <time in UTC>. If you changed only dynamic parameters, associated clusters are being modified now. If you changed static parameters, all updates, including dynamic parameters, will be applied when you reboot the associated clusters.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2002",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "VPC security groups for cluster <cluster name> updated at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2003",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Maintenance started on cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2004",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Maintenance on cluster <cluster name> completed at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2006",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster <cluster name> resize started at <time in UTC>. Cluster is in read-only mode.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2007",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "A resize request for cluster <cluster name> has been acknowledged.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3002",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> resize completed at <time in UTC>. Cluster is available for both reads and writes.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3500",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> resize failed at <time in UTC>. Operation will be retried within a few minutes.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3600",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The requested resize operation for Amazon Redshift cluster <cluster name> was cancelled in the past. Rollback completed at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3011",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster <cluster name> elastic resize started at <time in UTC>. Cluster is in read-only mode.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3012",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "An elastic resize request for cluster <cluster name> has been received.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3013",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> elastic resize failed at <time in UTC>. ",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1001",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Cluster <cluster name> parameter group changed to <parameter group name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1500",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "VPC <VPC name> does not exist. Configuration changes for cluster <cluster name> were not applied.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1501",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Subnets in cluster subnet group <subnet name> for Amazon VPC <VPC name> do not exist or are invalid. Cluster <cluster name> could not be created.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1502",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Subnets in cluster subnet group <subnet name> have no available IP addresses. Cluster <cluster name> could not be created.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1503",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "VPC <VPC name> has no Internet gateway. Configuration changes for cluster <cluster name> were not applied.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2008",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster restore <cluster name> from snapshot <snapshot name> started at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3003",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> was restored from cluster snapshot <snapshot name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3501",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster restore <cluster name> from cluster snapshot <snapshot name> failed at <time in UTC>. Retry from the Amazon Redshift console.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4500",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "A VPC security group is invalid. Configuration changes for cluster <cluster name> were not applied.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4501",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "An EC2 security group <security group name> specified in cluster security group <security group name> was not found. Authorization cannot be completed.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4001",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "Security group of cluster <cluster name> modified at <time in UTC>. Changes will be automatically applied to all associated clusters.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1504",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Unable to connect to HSM for cluster <cluster name>.  Please consult the documentation for troubleshooting details.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1505",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Unable to register HSM for cluster <cluster name>. Please provide a different configuration.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1506",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Amazon Redshift exceeded your account's EC2 Network Interface (ENI) limit. Please delete up to <maximum number of ENIs> ENIs or request a limit increase of the number of network interfaces per region with EC2.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3007",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Your Snapshot <snapshot name> was successfully copied from region <source region> to <destination region> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3504",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "S3 bucket <S3 bucket name> is no longer valid for logging for cluster <cluster name>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3505",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The S3 Bucket <S3 bucket name> does not have the necessary IAM policies for cluster <cluster name>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3506",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "S3 bucket <S3 bucket name> does not exist. Logging cannot be continued for cluster <cluster name>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3507",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> cannot be created.  EIP <ip address> is currently in use.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3508",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> cannot be created. EIP <ip address> could not be found.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3509",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cross Region Snapshot Copy is not enabled for cluster <cluster name>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2013",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster renamed to <new cluster identifier> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2014",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "A table restore request for cluster <cluster name> has been received.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3510",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Table restore failed to start for cluster <cluster name> at <time in UTC>. Reason: <reason>",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3008",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Table restore started for cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3009",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Table restore completed successfully for cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3511",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Table restore failed for cluster <cluster name> at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2015",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Table restore was cancelled for cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2016",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Replacement for cluster <cluster name> was started at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3512",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being automatically restored from the latest snapshot <snapshot name> created at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3513",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being automatically restored from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3514",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3515",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3516",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed with no backups. The cluster is being placed in hardware failure status and can be deleted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3519",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> began restart at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3520",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> completed restart at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2050",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> node replacement started at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3521",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Connectivity issue detected on cluster <cluster name>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3522",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Automated recovery action failed on cluster <cluster name>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3523",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being automatically restored from the latest snapshot <snapshot name> created at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3524",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being automatically restored from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3525",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3526",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3527",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> has failed due to a hardware issue. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3528",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> cannot be replaced because the KMS key <kms key> is inaccessible. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3529",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> cannot be replaced because the grant limit was reached for the KMS key <kms key>. The cluster is being placed in hardware failure status. Revoke unnecessary grants for the key in AWS KMS and restore the cluster from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3530",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> cannot be replaced because Amazon Redshift could not create the required grants using the KMS key <kms key>. The cluster is being placed in hardware failure status. Please delete the cluster and restore from the latest snapshot <snapshot name> created at <time in UTC>. Any database changes made after this time will need to be resubmitted.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3531",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "We identified a hardware maintenance event that affects your Amazon Redshift cluster <cluster name>. We scheduled a cluster replacement that will start during the next maintenance window. To avoid an unexpected outage, check your current maintenance window and move the window, if needed, to a time before <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3532",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "We identified a hardware maintenance event that affects a node in your Amazon Redshift cluster <cluster name>. We scheduled a node replacement that will start during the next maintenance window. To avoid an unexpected outage, check your current maintenance window and move the window, if needed, to a time before <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3533",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> resize was cancelled at <time in UTC>. The operation was cancelled because <reason>. <action needed>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2017",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Customer initiated maintenance started on your Amazon Redshift cluster <cluster name> at <time in UTC>. The cluster may not be available during maintenance.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2018",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Customer initiated maintenance completed on your Amazon Redshift cluster <cluster name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2019",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Customer initiated maintenance failed on your Amazon Redshift cluster <cluster name> at <time in UTC>. Returning the cluster back to its original state.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2020",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Your Amazon Redshift cluster <cluster name>'s track has been modified from <from track> to <to track>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3534",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> elastic resize completed at <time in UTC>. Cluster is available for both read and write operations.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3535",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> elastic resize failed at <time in UTC> and is unavailable for both read and write operations. Restore the cluster from the latest snapshot <snapshot name>",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3536",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> elastic resize failed at <time in UTC> and rollback succeeded on the cluster. Cluster is available for both read and write operations.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3537",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster <cluster name> data transfer completed at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3538",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Resize canceled for cluster <cluster name>. No IP addresses are available for subnets in cluster subnet group <subnet group name>",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2021",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The <operation> of Redshift cluster <cluster name> did not succeed while acquiring capacity from our capacity pool. We are working to acquire capacity, but for now we have cancelled your request. Delete this cluster and retry later.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2022",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The <operation> of Redshift cluster <cluster name> did not succeed while acquiring capacity from our capacity pool. We are working to acquire capacity but for now, we have cancelled your request. Capacity is available in: <alternative availability zones>. Delete this cluster and retry in an alternative availability zone.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2023",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "We have detected hardware failure on your single node Amazon Redshift cluster <cluster name>, which may have resulted in failed queries or intermittent availability of the cluster. Replacing the cluster did not succeed while acquiring capacity from our capacity pool. You will need to restore to a new cluster from a snapshot. Delete this cluster, select the latest available snapshot, and restore a new cluster from that snapshot. This will automatically provision you on healthy hardware.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2024",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "We have detected hardware failure on your single node Amazon Redshift cluster <cluster name>, which may have resulted in failed queries or intermittent availability of the cluster. Replacing the cluster did not succeed while acquiring capacity from our capacity pool. Capacity is available in availability zone: <alternative availability zones>. Delete this cluster, select the latest available snapshot, and restore a new cluster from that snapshot. This will automatically provision your cluster on healthy hardware.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2027",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "A cancel resize request for cluster <cluster name> has been received.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1507",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "The cluster snapshot schedule <snapshot schedule> for Amazon Redshift cluster <cluster identifier> modified successfully.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1508",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "The cluster snapshot schedule <snapshot schedule> for Amazon Redshift cluster <cluster identifier> did not update successfully. Try again.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2025",
+                "eventCategories": [
+                  "pending"
+                ],
+                "eventDescription": "Your cluster <cluster name> will be updated for database maintenance between <start time in UTC> and <end time in UTC>. Your cluster won't be accessible. We recommend that you plan for the outage.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2026",
+                "eventCategories": [
+                  "pending"
+                ],
+                "eventDescription": "Your cluster <cluster name> will be updated for system maintenance between <start time in UTC> and <end time in UTC>. Your cluster won't be accessible. We recommend that you plan for the outage.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3601",
+                "eventCategories": [
+                  "pending"
+                ],
+                "eventDescription": "One or more nodes on your cluster <cluster name> will be replaced between <start time in UTC> and <end time in UTC>. You can’t defer this required maintenance. We recommend that you plan for the outage.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3602",
+                "eventCategories": [
+                  "pending"
+                ],
+                "eventDescription": "One or more nodes on your cluster <cluster name> is scheduled to be replaced for maintenance between <start time in UTC> and <end time in UTC>. Your cluster won't be accessible. We recommend that you plan for the outage.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3603",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The restore operation to create a new Amazon Redshift cluster '%s' from cluster snapshot '%s' failed due to internal error.  Please restore the snapshot into a cluster of different configuration.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3610",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The default database name for Amazon Redshift cluster <cluster name> was changed to <database name> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3611",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The default database update for Amazon Redshift cluster <cluster name> didn't succeed because database <database name> doesn't exist. Retry the operation, with CreateDatabase set to true. Alternatively, create the database <database name> first, and then retry.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3612",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The limit of <database limit> databases for Amazon Redshift cluster <cluster name> has been reached. The create of database <database name> failed.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3613",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "A request to update database <database name> for cluster <cluster name> has been received.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3618",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The cluster <cluster name> pause operation started at <UTC time>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3619",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> was paused at <UTC time>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3620",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> pause operation failed at <UTC time>. Retry it from the Amazon Redshift console.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3621",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The cluster <cluster name> resume operation started at <UTC time>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3622",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> was resumed at <UTC time>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3623",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> resume operation failed at <UTC time>. Retry it from the Amazon Redshift console.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3624",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> can't be resumed with its previous Elastic IP address <IP address>. We will request a new Elastic IP address and associate it with the cluster.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3625",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The cluster <cluster name> can't be resumed with its previous elastic network interface <ENI id>. We will allocate a new elastic network interface and associate it with the cluster node.",
+                "severity": "INFO"
+              }
+            ]
+          },
+          {
+            "sourceType": "cluster-security-group",
+            "events": [
+              {
+                "eventId": "REDSHIFT-EVENT-4002",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "Cluster security group <security group name> created at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4003",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "Cluster security group <security group name> deleted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-4004",
+                "eventCategories": [
+                  "security"
+                ],
+                "eventDescription": "Cluster security group <security group name> updated at <time in UTC>. Changes will be automatically applied to associated clusters.",
+                "severity": "INFO"
+              }
+            ]
+          },
+          {
+            "sourceType": "cluster-parameter-group",
+            "events": [
+              {
+                "eventId": "REDSHIFT-EVENT-1002",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Parameter <parameter name> in Parameter Group <parameter group name> was updated to <new value> at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1003",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Cluster parameter group <parameter group name> created at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1004",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Cluster parameter group <parameter group name> deleted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-1005",
+                "eventCategories": [
+                  "configuration"
+                ],
+                "eventDescription": "Cluster parameter group <parameter group name> was updated at <time in UTC>. If you changed only dynamic parameters, associated clusters are being modified now. If you changed static parameters, all updates, including dynamic parameters, will be applied when you reboot the associated clusters.",
+                "severity": "INFO"
+              }
+            ]
+          },
+          {
+            "sourceType": "cluster-snapshot",
+            "events": [
+              {
+                "eventId": "REDSHIFT-EVENT-2009",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster snapshot <snapshot name> for cluster <cluster name> started at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3004",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster snapshot <snapshot name> for cluster <cluster name> completed successfully at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3503",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Cluster snapshot <snapshot name> for cluster <cluster name> failed at time <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2010",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster snapshot <snapshot name>' for cluster <cluster name> cancelled at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2011",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Cluster snapshot <snapshot name> for cluster <cluster name> was deleted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-2012",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "Final cluster snapshot <snapshot name> for cluster <cluster name> started at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3005",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Final cluster snapshot <snapshot name> for cluster <cluster name> succeeded at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3502",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Final cluster snapshot <snapshot name> for cluster <cluster name> failed at <time in UTC>.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3006",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "Final cluster snapshot <snapshot name> for cluster <cluster name> cancelled at <time in UTC>.",
+                "severity": "INFO"
+              }
+            ]
+          },
+          {
+            "sourceType": "scheduled-action",
+            "events": [
+              {
+                "eventId": "REDSHIFT-EVENT-3614",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' was created at <time in UTC>. The first invocation is scheduled at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3615",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' is scheduled at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3616",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' at <time in UTC> finished with 'SUCCEEDED' status.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3617",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' was skipped at <time in UTC> due to delay.",
+                "severity": "ERROR"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3626",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' was modified at <time in UTC>. The first invocation is scheduled at <time in UTC>",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3627",
+                "eventCategories": [
+                  "management"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' was deleted at <time in UTC>.",
+                "severity": "INFO"
+              },
+              {
+                "eventId": "REDSHIFT-EVENT-3628",
+                "eventCategories": [
+                  "monitoring"
+                ],
+                "eventDescription": "The scheduled action '<scheduled action name>' at <time in UTC> finished with 'FAILED' status.",
+                "severity": "ERROR"
+              }
+            ]
+          }
+        ]
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "6014b8bf-62f2-4258-893f-1676f027d20c",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "DescribeClusterDbRevisions",
+      "eventSource": "redshift.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "2916e5db-24ba-4d41-b136-3a55e5fddc92",
+      "responseElements": {
+        "clusterDbRevisions": []
+      },
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "ce081369c-85c4-43c6-a4d7-3ac464aa8a7b",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "ListSimulationApplications",
+      "eventSource": "robomaker.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "readOnly": true,
+      "requestID": "4c0225a0-5337-4ab8-8286-8f25ba27b288",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    },
+    {
+      "userAgent": "Boto3/1.15.2 Python/3.8.2 Linux/5.6.3-arch1-1 Botocore/1.18.2",
+      "eventID": "74a1c3e4-aa40-47b0-86e6-425c32b40499",
+      "errorMessage": "User: arn:aws:iam::811596193553:user/Level6 is not authorized to perform: license-manager:GetServiceSettings",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDADO2GQD0K8TEF7KW1V",
+        "arn": "arn:aws:iam::811596193553:user/Level6",
+        "accountId": "811596193553",
+        "accessKeyId": "AKIA3Z2XBVUDFQ9TU4MD",
+        "userName": "Level6"
+      },
+      "eventType": "AwsApiCall",
+      "errorCode": "AccessDenied",
+      "sourceIPAddress": "205.8.181.128",
+      "eventName": "GetServiceSettings",
+      "eventSource": "license-manager.amazonaws.com",
+      "recipientAccountId": "811596193553",
+      "requestParameters": null,
+      "awsRegion": "us-east-1",
+      "requestID": "e79ea56d-d468-4496-a4bb-11ccdcc4f2e2",
+      "responseElements": null,
+      "eventVersion": "1.05",
+      "eventTime": "2020-09-30T23:53:41Z"
+    }
+  ]
+}
+
