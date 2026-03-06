@@ -2,10 +2,10 @@
   "name": "cloudtrail-to-parquet",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.ts",
+  "main": "src/entrypoint_cli.ts",
   "scripts": {
-    "start": "bun index.ts",
-    "dev": "bun --watch index.ts",
+    "start": "bun src/entrypoint_cli.ts",
+    "dev": "bun --watch src/entrypoint_cli.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

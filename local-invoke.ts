@@ -12,7 +12,7 @@
  *   CLOUDTRAIL_BASE_PATH=test_data/ OUTPUT_PATH=/tmp/parquet-out/ bun run local-invoke.ts
  */
 
-import { handler } from './handler';
+import { entrypoint_handler } from './src/entrypoint_handler';
 
 // ── Default env for local runs ─────────────────────────────────────────────
 // Override any of these via environment variables before running.
@@ -55,7 +55,7 @@ console.log('  PROCESS_DATE         =', process.env.PROCESS_DATE ?? '(not set �
 console.log('───────────────────────────────────────────────────────────\n');
 
 try {
-    await handler(mockEvent, mockContext);
+    await entrypoint_handler(mockEvent, mockContext);
     console.log('\n✅  Handler completed successfully.');
 } catch (err) {
     console.error('\n❌  Handler threw an error:');

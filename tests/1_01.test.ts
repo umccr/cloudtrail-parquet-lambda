@@ -1,11 +1,12 @@
 import { expect, test } from "bun:test";
-import { convert } from "../src/converter";
+import { convertSingle } from "../src/converter";
 import { readParquetBuffer } from "./hyparquet_helper";
 import { Compression } from "parquet-wasm";
+import { getFirstConversion } from "./convert_helper";
 
 test("1.01", async () => {
-  const pq = await convert("test_data/examples/1_01.json", Compression.SNAPPY);
 
+  const pq = await getFirstConversion("test_data/examples/1_01.json", "");
   const rows = await readParquetBuffer(pq);
 
   expect(rows).toBeArrayOfSize(1);

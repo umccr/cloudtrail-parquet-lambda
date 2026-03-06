@@ -9,7 +9,8 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "verbatimModuleSyntax": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "moduleDetection": "force"
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]

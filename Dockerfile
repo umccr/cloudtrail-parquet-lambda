@@ -1,3 +1,5 @@
+#
+#
 FROM oven/bun:1.3.10 AS builder
 
 WORKDIR /app
@@ -9,26 +11,44 @@ RUN bun install --frozen-lockfile
 # copy source
 COPY . .
 
-# Bundle handler + all imports into a single JS file.
+# Bundle entrypoint_handler + all imports into a single JS file.
 # --target=bun keeps Bun APIs available at runtime.
 # --minify reduces cold-start size.
-RUN bun build ./handler.ts \
+RUN bun build ./src/entrypoint_handler.ts \
       --outfile dist/handler.js \
       --target bun \
       --minify
 
+RUN bun build ./src/entrypoint_lambda_runtime.ts \
+      --outfile dist/runtime.js \
+      --target bun \
+      --minify
 
+# Local testing target (not used in production)
+#
+FROM runtime AS local
+
+ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie-arm64 /usr/local/bin/aws-lambda-rie
+RUN chmod +x /usr/local/bin/aws-lambda-rie
+
+ENTRYPOINT ["/usr/local/bin/aws-lambda-rie", "bun", "run", "/app/runtime.js"]
+CMD ["handler.handler"]
+
+# Actual lambda target (production)
+# Listed last so it is the default build target (need to target "local" explicit for test builds)
+#
 FROM oven/bun:1.3.10-slim AS runtime
 
 WORKDIR /app
 
-# the aws-lambda-ric (Runtime Interface Client) bootstraps the Lambda runtime
-# protocol. bun-lambda wraps this cleanly for Bun.
-RUN bun add bun-lambda
-
 COPY --from=builder /app/dist/handler.js ./handler.js
+COPY --from=builder /app/dist/runtime.js ./runtime.js
 
-# tell Lambda to use bun-lambda as the bootstrap
-ENTRYPOINT ["/app/node_modules/bun-lambda/aws-lambda-rie"]
+COPY --from=builder /app/node_modules/parquet-wasm ./node_modules/parquet-wasm
 
+# AWS Lambda container contract:
+#   ENTRYPOINT  = the process to run
+#   CMD         = passed as _HANDLER env var by Lambda ("module.exportName")
+ENTRYPOINT ["bun", "run", "/app/runtime.js"]
 CMD ["handler.handler"]
+

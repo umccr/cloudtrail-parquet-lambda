@@ -1,6 +1,6 @@
 import { parquetRead, parquetMetadata, parquetSchema } from 'hyparquet';
 
-// hyparquet works with ArrayBuffer, not Uint8Array — convert once up front.
+// hyparquet works with ArrayBuffer, not Uint8Array — convertSingle once up front.
 function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
     return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer;
 }

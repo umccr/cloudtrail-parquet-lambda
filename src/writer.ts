@@ -50,6 +50,41 @@ export function buildBatch(rows: FlatRecord[]): arrow.RecordBatch {
   return new arrow.RecordBatch(SCHEMA, structData);
 }
 
+
+export function getRecordBatchSize(batch: arrow.RecordBatch): number {
+  let totalBytes = 0;
+
+  for (let i = 0; i < batch.numCols; i++) {
+    const column = batch.getChildAt(i);
+    if (column) {
+      totalBytes += getVectorSize(column);
+    }
+  }
+
+  return totalBytes;
+}
+
+function getVectorSize(vector: arrow.Vector): number {
+  let size = 0;
+
+  for (const data of vector.data) {
+    // Access known buffer properties
+    if (data.values) size += data.values.byteLength;
+    if (data.nullBitmap) size += data.nullBitmap.byteLength;
+    if (data.valueOffsets) size += data.valueOffsets.byteLength;
+    if (data.typeIds) size += data.typeIds.byteLength;
+
+    // For nested types, recursively calculate
+    if (data.children) {
+      for (const child of data.children) {
+        // Recursively calculate child sizes if needed
+      }
+    }
+  }
+
+  return size;
+}
+
 // ── Write Arrow RecordBatches to a Parquet file via IPC bridge ────────────────
 export async function writeBatchesToParquet(
     batches: arrow.RecordBatch[],
