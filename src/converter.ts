@@ -76,8 +76,8 @@ export async function convertSingleDayCloudTrailToParquets(
         const base = baseOutputPath ? baseOutputPath : "<outputPath>/";
 
         const output = organisationId
-          ? `${base}AWSLogs/${organisationId}/${account}CloudTrailParquet/${region}${yearString}/${monthString}/${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
-          : `${base}AWSLogs/${account}CloudTrailParquet/${region}${yearString}/${monthString}/${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
+          ? `${base}AWSLogsParquet/CloudTrail/${organisationId}/account=${account}region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
+          : `${base}AWSLogsParquet/CloudTrail/account=${account}region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
 
         if (baseOutputPath) {
           console.log(
