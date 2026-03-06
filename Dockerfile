@@ -28,7 +28,7 @@ RUN bun build ./src/entrypoint_lambda_runtime.ts \
 #
 FROM runtime AS local
 
-ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie-arm64 /usr/local/bin/aws-lambda-rie
+ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/download/v1.33/aws-lambda-rie-arm64 /usr/local/bin/aws-lambda-rie
 RUN chmod +x /usr/local/bin/aws-lambda-rie
 
 ENTRYPOINT ["/usr/local/bin/aws-lambda-rie", "bun", "run", "/app/runtime.js"]
