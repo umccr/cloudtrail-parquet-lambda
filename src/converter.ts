@@ -61,8 +61,7 @@ export async function convertSingleDayCloudTrailToParquets(
       continue;
     }
     console.log(
-      `Inspecting region ${region} in account ${accountId} at ${awsCloudTrailLogsBasePath} gives the following logs\n` +
-        JSON.stringify(logsOfInterest, null, 2),
+      `Inspecting region ${region} in account ${accountId} gives the following log sample path ${logsOfInterest[0]} and length ${logsOfInterest.length}\n`
     );
 
     let parquetCounter = 0;
@@ -234,7 +233,7 @@ export async function* convertSingle(
     // yielded
   } else {
     console.log(
-      `Yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
+      `Last yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
     );
     yield await writeBatchesToParquet(batches, compression);
   }
