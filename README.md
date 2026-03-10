@@ -25,6 +25,24 @@ can efficiently do the conversion – with the following features:
 
 ## Use downstream
 
+We have optimised the generated Parquet files to be as easy to use downstream as possible.
+
+Parquet files are collated per day – including bringing in entries that have been delayed and written
+into a later day.
+
+Each set of Parquet for a single day are stored in a folder named according to Hive partitioning
+principles. We have maximised the ability to push-down predicates to avoid unnecessary reads.
+
+Fields in the partition are:
+* account
+* region
+* year
+* month
+* day
+
+Note that the handling of types with hive partitioning is not always consistent – care should be taken
+to interpret year, month and day as integers, and to interpret account and region as strings.
+
 ### Polars
 
 ```python
