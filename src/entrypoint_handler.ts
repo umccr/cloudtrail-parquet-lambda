@@ -1,19 +1,14 @@
 import { convertSingleDayCloudTrailToParquets } from "./converter";
 
 /**
- * EventBridge Scheduled Event (cron) shape.
- * The Lambda runtime passes this when triggered by an EventBridge rule.
+ * An AWS Lambda entry point for a lambda that converts
+ * CloudTrail logs for a single account into Parquet files.
  */
 interface ScheduledEvent {
-  version: string;
-  id: string;
-  "detail-type": "Scheduled Event";
-  source: "aws.events";
-  account: string;
-  time: string; // ISO-8601, e.g. "2024-03-05T00:00:00Z"
-  region: string;
-  resources: string[];
-  detail: Record<string, never>;
+  baseInputPath: string;
+  baseOutputPath: string | null;
+  organisationId: string | null;
+  accountId: string;
 }
 
 interface LambdaContext {
@@ -27,17 +22,18 @@ interface LambdaContext {
  *
  * Priority:
  *   1. PROCESS_DATE env var ("YYYY-MM-DD") - useful for backfills
- *   2. The EventBridge event `time` minus one day - i.e. "yesterday"
+ *   2. The current UTC time of invocation minus 1 day (i.e. yesterday)
  *
  * For a daily cron that fires at 01:00 UTC, this means we always process
  * the fully completed previous day.
  */
-function resolveDate(eventTime: string): {
+function resolveDate(): {
   year: number;
   month: number;
   day: number;
 } {
   const override = process.env.PROCESS_DATE;
+
   if (override) {
     const [y, m, d] = override.split("-").map(Number);
     if (!y || !m || !d)
@@ -47,11 +43,8 @@ function resolveDate(eventTime: string): {
     return { year: y, month: m, day: d };
   }
 
-  if (!eventTime)
-    throw new Error(`Invalid event.time passed in to the lambda`);
-
   // Default: yesterday relative to the event fire time
-  const t = new Date(eventTime);
+  const t = new Date();
   t.setUTCDate(t.getUTCDate() - 1);
   return {
     year: t.getUTCFullYear(),
@@ -67,37 +60,35 @@ export async function handler(
   console.log("Event:", JSON.stringify(event));
   console.log("Request ID:", context.awsRequestId);
 
-  // ── Required env vars ──────────────────────────────────────────────────────
-  const basePath = process.env.CLOUDTRAIL_BASE_PATH;
-  const outputPath = process.env.OUTPUT_PATH;
-  const accountId = process.env.ACCOUNT_ID;
+  const invokedAt = new Date().toISOString();
+  console.log("Invoked At:", invokedAt);
 
-  if (!basePath)
+  if (!event.baseInputPath || !event.baseInputPath.endsWith("/"))
     throw new Error(
-      "Missing env var: CLOUDTRAIL_BASE_PATH (e.g. s3://my-bucket/prefix/)",
-    );
-  if (!outputPath)
-    throw new Error(
-      "Missing env var: OUTPUT_PATH (e.g. s3://my-output-bucket/parquet/)",
-    );
-  if (!accountId)
-    throw new Error(
-      "Missing env var: ACCOUNT_ID (e.g. 3453464564)",
+      "Missing slash terminated base input path 'baseInputPath' e.g. s3://my-bucket/prefix/cloudtrail-logs/",
     );
 
-  // ── Optional env vars ──────────────────────────────────────────────────────
-  const organisationId = process.env.ORGANISATION_ID ?? null; // null = no org prefix
+  if (event.baseOutputPath)
+    if (!event.baseOutputPath.endsWith("/"))
+      throw new Error(
+        "Missing slash termination on optional base output path 'baseOutputPath' e.g. s3://my-bucket/prefix/cloudtrail-parquet-logs/",
+      );
 
-  const { year, month, day } = resolveDate(event.time);
+  if (!event.accountId)
+    throw new Error(
+      "Missing account id to process 'accountId' (e.g. 3453464564)",
+    );
+
+  const { year, month, day } = resolveDate();
   console.log(
-    `Processing CloudTrail logs for ${accountId} for ${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+    `Processing CloudTrail logs for ${event.accountId} for ${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
   );
 
   await convertSingleDayCloudTrailToParquets(
-    basePath,
-    outputPath,
-    organisationId,
-    accountId,
+    event.baseInputPath,
+    event.baseOutputPath,
+    event.organisationId,
+    event.accountId,
     year,
     month,
     day,
