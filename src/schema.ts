@@ -25,19 +25,21 @@ export type FlatRecord = {
   vpcEndpointId: string | null;
   errorCode: string | null;
   errorMessage: string | null;
-  userIdentity_type: string | null;
-  userIdentity_principalId: string | null;
-  userIdentity_arn: string | null;
-  userIdentity_accountId: string | null;
-  userIdentity_accessKeyId: string | null;
-  userIdentity_userName: string | null;
-  userIdentity_invokedBy: string | null;
-  userIdentity_sessionContext: string | null;
+  userIdentity: {
+    type: string | null;
+    principalId: string | null;
+    arn: string | null;
+    accountId: string | null;
+    accessKeyId: string | null;
+    userName: string | null;
+    invokedBy: string | null;
+    sessionContext: string | null;
+  } | null;
   requestParameters: string | null;
   responseElements: string | null;
   additionalEventData: string | null;
   serviceEventDetails: string | null;
-  resources: string | null;
+  resources: Array<{ ARN: string | null; accountId: string | null; type: string | null }> | null;
   tlsDetails: string | null;
   sharedEventID: string | null;
 
@@ -45,8 +47,10 @@ export type FlatRecord = {
   eventCategory: string | null;
   addendum: string | null;
   sessionCredentialFromConsole: boolean | null;
-  eventContext_requestContext: string | null;
-  eventContext_tagContext: string | null;
+  eventContext: {
+    requestContext: string | null;
+    tagContext: string | null;
+  } | null;
   edgeDeviceDetails: string | null;
 };
 
@@ -114,42 +118,19 @@ export const SCHEMA = new arrow.Schema([
   // and 10 is the minor version.
   mf("eventVersion", new arrow.Utf8(), CloudTrailVersion.VER_1_0, false),
 
-  // userIdentity — scalars flattened, sessionContext as JSON string
-  mf("userIdentity_type", new arrow.Utf8(), CloudTrailVersion.VER_1_0, true),
+  // userIdentity — nested struct; sessionContext serialised as a JSON string
   mf(
-    "userIdentity_principalId",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_0,
-    true,
-  ),
-  mf("userIdentity_arn", new arrow.Utf8(), CloudTrailVersion.VER_1_0, true),
-  mf(
-    "userIdentity_accountId",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_0,
-    true,
-  ),
-  mf(
-    "userIdentity_accessKeyId",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_0,
-    true,
-  ),
-  mf(
-    "userIdentity_userName",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_0,
-    true,
-  ),
-  mf(
-    "userIdentity_invokedBy",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_0,
-    true,
-  ),
-  mf(
-    "userIdentity_sessionContext",
-    new arrow.Utf8(),
+    "userIdentity",
+    new arrow.Struct([
+      new arrow.Field("type", new arrow.Utf8(), true),
+      new arrow.Field("principalId", new arrow.Utf8(), true),
+      new arrow.Field("arn", new arrow.Utf8(), true),
+      new arrow.Field("accountId", new arrow.Utf8(), true),
+      new arrow.Field("accessKeyId", new arrow.Utf8(), true),
+      new arrow.Field("userName", new arrow.Utf8(), true),
+      new arrow.Field("invokedBy", new arrow.Utf8(), true),
+      new arrow.Field("sessionContext", new arrow.Utf8(), true),
+    ]),
     CloudTrailVersion.VER_1_0,
     true,
   ),
@@ -293,7 +274,22 @@ export const SCHEMA = new arrow.Schema([
   // ARN: arn:aws:iam::123456789012:role/myRole
   // Account ID: 123456789012
   // Resource type identifier: AWS::IAM::Role
-  mf("resources", new arrow.Utf8(), CloudTrailVersion.VER_1_01, true),
+  mf(
+    "resources",
+    new arrow.List(
+      new arrow.Field(
+        "item",
+        new arrow.Struct([
+          new arrow.Field("ARN", new arrow.Utf8(), true),
+          new arrow.Field("accountId", new arrow.Utf8(), true),
+          new arrow.Field("type", new arrow.Utf8(), true),
+        ]),
+        true,
+      ),
+    ),
+    CloudTrailVersion.VER_1_01,
+    true,
+  ),
 
   // Represents the account ID that received this event. The recipientAccountID may be
   // different from the CloudTrail userIdentity element accountId. This can occur
@@ -345,20 +341,20 @@ export const SCHEMA = new arrow.Schema([
     true,
   ),
 
+  // eventContext — nested struct; requestContext and tagContext serialised as JSON strings
+  // these are only present in enhriched mode and inside CloudTrail lake
+  // (so we may never see these)
   mf(
-    "eventContext_requestContext",
-    new arrow.Utf8(),
+    "eventContext",
+    new arrow.Struct([
+      new arrow.Field("requestContext", new arrow.Utf8(), true),
+      new arrow.Field("tagContext", new arrow.Utf8(), true),
+    ]),
     CloudTrailVersion.VER_1_11,
     true,
   ),
 
-  mf(
-    "eventContext_tagContext",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_11,
-    true,
-  ),
-
+  // edge device details
   mf("edgeDeviceDetails", new arrow.Utf8(), CloudTrailVersion.VER_1_08, true),
 
   // Shows information about the Transport Layer Security (TLS) version, cipher suites, and
@@ -419,16 +415,16 @@ export function flattenRecord(r: any): FlatRecord {
   return {
     eventTime: ts(r.eventTime),
     eventVersion: str(r.eventVersion),
-
-    userIdentity_type: str(ui.type),
-    userIdentity_principalId: str(ui.principalId),
-    userIdentity_arn: str(ui.arn),
-    userIdentity_accountId: str(ui.accountId),
-    userIdentity_accessKeyId: str(ui.accessKeyId),
-    userIdentity_userName: str(ui.userName),
-    userIdentity_invokedBy: str(ui.invokedBy),
-    userIdentity_sessionContext: json(ui.sessionContext),
-
+    userIdentity: r.userIdentity == null ? null : {
+      type: str(ui.type),
+      principalId: str(ui.principalId),
+      arn: str(ui.arn),
+      accountId: str(ui.accountId),
+      accessKeyId: str(ui.accessKeyId),
+      userName: str(ui.userName),
+      invokedBy: str(ui.invokedBy),
+      sessionContext: json(ui.sessionContext),
+    },
     eventSource: str(r.eventSource),
     eventName: str(r.eventName),
     awsRegion: str(r.awsRegion),
@@ -445,7 +441,13 @@ export function flattenRecord(r: any): FlatRecord {
     apiVersion: str(r.apiVersion),
     managementEvent: bool(r.managementEvent) ?? false,
     readOnly: bool(r.readOnly) ?? false,
-    resources: json(r.resources),
+    resources: Array.isArray(r.resources)
+      ? (r.resources as any[]).map((res: any) => ({
+          ARN: str(res.ARN),
+          accountId: str(res.accountId),
+          type: str(res.type),
+        }))
+      : null,
     recipientAccountId: str(r.recipientAccountId),
     serviceEventDetails: json(r.serviceEventDetails),
     sharedEventID: str(r.sharedEventID),
@@ -454,9 +456,10 @@ export function flattenRecord(r: any): FlatRecord {
     eventCategory: throwIfNotAllowedMissingMandatoryString(ver, "1.07", str(r.eventCategory)),
     addendum: json(r.addendum),
     sessionCredentialFromConsole: bool(r.sessionCredentialFromConsole) ?? false,
-    eventContext_requestContext: json(ec.requestContext),
-    eventContext_tagContext: json(ec.tagContext),
-
+    eventContext: r.eventContext == null ? null : {
+      requestContext: json(ec.requestContext),
+      tagContext: json(ec.tagContext),
+    },
     edgeDeviceDetails: json(r.edgeDeviceDetails),
     tlsDetails: json(r.tlsDetails),
   };

@@ -6,7 +6,7 @@ import {
   writeParquet,
   WriterPropertiesBuilder,
 } from "parquet-wasm/node";
-import { type FlatRecord, SCHEMA } from "./schema.js";
+import { type FlatRecord, SCHEMA } from "./schema";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { mkdir, writeFile } from "node:fs/promises";
 import { isS3Uri, parseS3Uri } from "./s3_uri";

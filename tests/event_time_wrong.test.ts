@@ -7,13 +7,12 @@ import { getFirstConversion } from "./convert_helper";
 test("event time wrong", async () => {
 
   // just like the real 1.01 test but with the event time prefix wrong
+  // which will lead to us having no entries - and hence generating
+  // an empty (null) parquet file
   const pq = await getFirstConversion(
     "test_input/examples/1_01.json",
     "2014-07-19",
   );
 
-  const rows = await readParquetBuffer(pq);
-
-  // the row should be skipped as its event time didn't match
-  expect(rows).toBeArrayOfSize(0);
+  expect(pq).toBeNull();
 });

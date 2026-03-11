@@ -9,6 +9,7 @@ LICENSE
 .env
 .idea
 .github
+.claude
 
 # Any other files or directories you want to exclude
 test*/

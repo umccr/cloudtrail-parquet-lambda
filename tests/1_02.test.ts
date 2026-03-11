@@ -2,13 +2,8 @@ import { expect, test } from "bun:test";
 import { readParquetBuffer } from "./hyparquet_helper";
 import { getFirstConversion } from "./convert_helper";
 
-test("1.01", async () => {
-
-  const pq = await getFirstConversion(
-    "test_input/examples/1_01.json",
-    "2014-07-18",
-  );
-
+test("1.02", async () => {
+  const pq = await getFirstConversion("test_input/examples/1_02.json", "2015-01-16");
   expect(pq).toBeObject();
 
   const rows = await readParquetBuffer(pq!);
@@ -16,22 +11,22 @@ test("1.01", async () => {
   const row = rows[0]!;
 
   // Core event fields present in the JSON
-  expect(row).toHaveProperty("eventVersion", "1.01");
-  expect(row).toHaveProperty("eventSource", "iam.amazonaws.com");
-  expect(row).toHaveProperty("eventName", "CreateRole");
+  expect(row).toHaveProperty("eventVersion", "1.02");
+  expect(row).toHaveProperty("eventSource", "signin.amazonaws.com");
+  expect(row).toHaveProperty("eventName", "ConsoleLogin");
   expect(row).toHaveProperty("awsRegion", "us-east-1");
   expect(row).toHaveProperty("sourceIPAddress", "192.0.2.1");
-  expect(row).toHaveProperty("userAgent", "aws-cli/1.4.4");
-  expect(row).toHaveProperty("requestID", "4EXAMPLE-7e2b-11e4-abb8-3f06f8f3935f");
-  expect(row).toHaveProperty("eventID", "aEXAMPLE-4a4f-4f2a-a7ed-c97a67b82974");
+  expect(row).toHaveProperty("userAgent", "Mozilla/5.0");
+  expect(row).toHaveProperty("requestID", "1EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f");
+  expect(row).toHaveProperty("eventID", "2EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f");
+  expect(row).toHaveProperty("eventType", "AwsConsoleSignIn");
   expect(row).toHaveProperty("readOnly", false);
   expect(row.eventTime).not.toBeNull();
 
   // Sentinel strings for mandatory fields not present until a later schema version
-  expect(row).toHaveProperty("eventType", "Pre1.02SchemaNull");
   expect(row).toHaveProperty("eventCategory", "Pre1.07SchemaNull");
 
-  // Fields absent in this event
+  // Optional fields absent in this event
   expect(row).toHaveProperty("errorCode", null);
   expect(row).toHaveProperty("errorMessage", null);
   expect(row).toHaveProperty("apiVersion", null);
@@ -43,10 +38,11 @@ test("1.01", async () => {
   expect(row).toHaveProperty("vpcEndpointAccountId", null);
   expect(row).toHaveProperty("addendum", null);
   expect(row).toHaveProperty("sessionCredentialFromConsole", false);
-  expect(row).toHaveProperty("additionalEventData", null);
   expect(row).toHaveProperty("edgeDeviceDetails", null);
   expect(row).toHaveProperty("tlsDetails", null);
   expect(row.eventContext).toBeUndefined();
+  expect(row).toHaveProperty("requestParameters", null);
+  expect(row.resources).toBeUndefined();
 
   // userIdentity nested struct
   expect(row).toHaveProperty("userIdentity.type", "IAMUser");
@@ -60,16 +56,11 @@ test("1.01", async () => {
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(
-    "requestParameters",
-    JSON.stringify({ roleName: "TestRole", assumeRolePolicyDocument: '{"Version":"2012-10-17"}' }),
+    "responseElements",
+    JSON.stringify({ ConsoleLogin: "Success" }),
   );
   expect(row).toHaveProperty(
-    "responseElements",
-    JSON.stringify({ role: { roleName: "TestRole", roleId: "AROAI3FHNTUD3XMDE2RFF", arn: "arn:aws:iam::123456789012:role/TestRole", createDate: "Jul 18, 2014 3:07:39 PM", assumeRolePolicyDocument: "%7B%22Version%22%3A%222012-10-17%22%7D" } }),
+    "additionalEventData",
+    JSON.stringify({ LoginTo: "https://console.aws.amazon.com/console/home", MobileVersion: "No", MFAUsed: "No" }),
   );
-
-  // resources list
-  expect(row).toHaveProperty("resources.0.ARN", "arn:aws:iam::123456789012:role/TestRole");
-  expect(row).toHaveProperty("resources.0.accountId", "123456789012");
-  expect(row).toHaveProperty("resources.0.type", "AWS::IAM::Role");
 });
