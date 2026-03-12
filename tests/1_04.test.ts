@@ -53,7 +53,7 @@ test("1.04", async () => {
   expect(row).toHaveProperty("userIdentity.accessKeyId", null);
   expect(row).toHaveProperty("userIdentity.userName", null);
   expect(row).toHaveProperty("userIdentity.invokedBy", "AWS Internal");
-  expect(row).toHaveProperty("userIdentity.sessionContext", null);
+  expect((row as any).userIdentity?.sessionContext).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

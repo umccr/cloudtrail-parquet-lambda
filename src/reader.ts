@@ -59,7 +59,9 @@ export async function* streamRecords(
       skipped++;
   }
 
-  console.log(`Finished '${inputPath.slice(-45)}' where we yielded ${yielded} and skipped ${skipped} (that did not start with ${eventTimePrefix})`);
+  console.debug(
+    `Finished '${inputPath.slice(-45)}' where we yielded ${yielded} and skipped ${skipped} (that did not start with ${eventTimePrefix})`,
+  );
 }
 
 const isGzipped = (path: string): boolean =>

@@ -52,10 +52,10 @@ test("1.05", async () => {
   expect(row).toHaveProperty("userIdentity.accessKeyId", "AKIAIOSFODNN7EXAMPLE");
   expect(row).toHaveProperty("userIdentity.userName", "Administrator");
   expect(row).toHaveProperty("userIdentity.invokedBy", "signin.amazonaws.com");
-  expect(row).toHaveProperty(
-    "userIdentity.sessionContext",
-    JSON.stringify({ attributes: { mfaAuthenticated: "false", creationDate: "2018-10-21T09:17:01Z" } }),
-  );
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.mfaAuthenticated", "false");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.creationDate", "2018-10-21T09:17:01Z");
+  expect((row as any).userIdentity?.sessionContext?.sessionIssuer).toBeUndefined();
+  expect((row as any).userIdentity?.sessionContext?.webIdFederationData).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

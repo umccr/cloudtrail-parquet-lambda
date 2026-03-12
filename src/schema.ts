@@ -33,13 +33,53 @@ export type FlatRecord = {
     accessKeyId: string | null;
     userName: string | null;
     invokedBy: string | null;
-    sessionContext: string | null;
+    invokedByDelegate: { accountId: string | null } | null;
+    sessionContext: {
+      sessionIssuer: {
+        type: string | null;
+        userName: string | null;
+        principalId: string | null;
+        arn: string | null;
+        accountId: string | null;
+      } | null;
+      webIdFederationData: {
+        federatedProvider: string | null;
+        attributes: {
+          appid: string | null;
+          aud: string | null;
+        } | null;
+      } | null;
+      attributes: {
+        creationDate: string | null;
+        mfaAuthenticated: string | null;
+        sessionCredentialFromConsole: string | null;
+      } | null;
+      assumedRoot: string | null;
+      sourceIdentity: string | null;
+      ec2RoleDelivery: string | null;
+    } | null;
+    onBehalfOf: {
+      userId: string | null;
+      identityStoreArn: string | null;
+    } | null;
+    inScopeOf: {
+      sourceArn: string | null;
+      sourceAccount: string | null;
+      issuerType: string | null;
+      credentialsIssuedTo: string | null;
+    } | null;
+    credentialId: string | null;
+    identityProvider: string | null;
   } | null;
   requestParameters: string | null;
   responseElements: string | null;
   additionalEventData: string | null;
   serviceEventDetails: string | null;
-  resources: Array<{ ARN: string | null; accountId: string | null; type: string | null }> | null;
+  resources: Array<{
+    ARN: string | null;
+    accountId: string | null;
+    type: string | null;
+  }> | null;
   tlsDetails: string | null;
   sharedEventID: string | null;
 
@@ -122,14 +162,102 @@ export const SCHEMA = new arrow.Schema([
   mf(
     "userIdentity",
     new arrow.Struct([
+      // The type of the identity.
       new arrow.Field("type", new arrow.Utf8(), true),
-      new arrow.Field("principalId", new arrow.Utf8(), true),
-      new arrow.Field("arn", new arrow.Utf8(), true),
-      new arrow.Field("accountId", new arrow.Utf8(), true),
-      new arrow.Field("accessKeyId", new arrow.Utf8(), true),
+      // The friendly name of the identity that made the call.
       new arrow.Field("userName", new arrow.Utf8(), true),
+      // A unique identifier for the entity that made the call.
+      new arrow.Field("principalId", new arrow.Utf8(), true),
+      // The Amazon Resource Name (ARN) of the principal that made the call.
+      new arrow.Field("arn", new arrow.Utf8(), true),
+      // The account that owns the entity that granted permissions for the request.
+      new arrow.Field("accountId", new arrow.Utf8(), true),
+      // The access key ID that was used to sign the request.
+      new arrow.Field("accessKeyId", new arrow.Utf8(), true),
+      // If the request was made with temporary security credentials, sessionContext
+      // provides information about the session created for those credentials.
+      new arrow.Field(
+        "sessionContext",
+        new arrow.Struct([
+          new arrow.Field(
+            "sessionIssuer",
+            new arrow.Struct([
+              new arrow.Field("type", new arrow.Utf8(), true),
+              new arrow.Field("userName", new arrow.Utf8(), true),
+              new arrow.Field("principalId", new arrow.Utf8(), true),
+              new arrow.Field("arn", new arrow.Utf8(), true),
+              new arrow.Field("accountId", new arrow.Utf8(), true),
+            ]),
+            true,
+          ),
+          new arrow.Field(
+            "webIdFederationData",
+            new arrow.Struct([
+              new arrow.Field("federatedProvider", new arrow.Utf8(), true),
+              new arrow.Field(
+                "attributes",
+                new arrow.Struct([
+                  new arrow.Field("appid", new arrow.Utf8(), true),
+                  new arrow.Field("aud", new arrow.Utf8(), true),
+                ]),
+                true,
+              ),
+            ]),
+            true,
+          ),
+          new arrow.Field(
+            "attributes",
+            new arrow.Struct([
+              new arrow.Field("creationDate", new arrow.Utf8(), true),
+              new arrow.Field("mfaAuthenticated", new arrow.Utf8(), true),
+              new arrow.Field(
+                "sessionCredentialFromConsole",
+                new arrow.Utf8(),
+                true,
+              ),
+            ]),
+            true,
+          ),
+          new arrow.Field("assumedRoot", new arrow.Utf8(), true),
+          new arrow.Field("sourceIdentity", new arrow.Utf8(), true),
+          new arrow.Field("ec2RoleDelivery", new arrow.Utf8(), true),
+        ]),
+        true,
+      ),
+      // The name of the AWS service that made the request, when a request is made by
+      // an AWS service such as Amazon EC2 Auto Scaling or AWS Elastic Beanstalk.
       new arrow.Field("invokedBy", new arrow.Utf8(), true),
-      new arrow.Field("sessionContext", new arrow.Utf8(), true),
+      // The AWS account ID of a product provider using temporary delegated access.
+      new arrow.Field(
+        "invokedByDelegate",
+        new arrow.Struct([
+          new arrow.Field("accountId", new arrow.Utf8(), true),
+        ]),
+        true,
+      ),
+      new arrow.Field(
+        "onBehalfOf",
+        new arrow.Struct([
+          new arrow.Field("userId", new arrow.Utf8(), true),
+          new arrow.Field("identityStoreArn", new arrow.Utf8(), true),
+        ]),
+        true,
+      ),
+      // Service-to-service request scope info.
+      new arrow.Field(
+        "inScopeOf",
+        new arrow.Struct([
+          new arrow.Field("sourceArn", new arrow.Utf8(), true),
+          new arrow.Field("sourceAccount", new arrow.Utf8(), true),
+          new arrow.Field("issuerType", new arrow.Utf8(), true),
+          new arrow.Field("credentialsIssuedTo", new arrow.Utf8(), true),
+        ]),
+        true,
+      ),
+      // Credential ID for bearer token requests (e.g. IAM Identity Center access tokens).
+      new arrow.Field("credentialId", new arrow.Utf8(), true),
+      // External identity provider principal name (SAMLUser / WebIdentityUser only).
+      new arrow.Field("identityProvider", new arrow.Utf8(), true),
     ]),
     CloudTrailVersion.VER_1_0,
     true,
@@ -234,12 +362,7 @@ export const SCHEMA = new arrow.Schema([
 
   // GUID generated by CloudTrail to uniquely identify each event. You can use this value to identify a
   // single event. For example, you can use the ID as a primary key to retrieve log data from a searchable database.
-  mf(
-    "eventID",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_01,
-    false,
-  ),
+  mf("eventID", new arrow.Utf8(), CloudTrailVersion.VER_1_01, false),
 
   // Identifies the type of event that generated the event record. This can be the one of the following values:
   //
@@ -325,12 +448,7 @@ export const SCHEMA = new arrow.Schema([
     true,
   ),
 
-  mf(
-    "eventCategory",
-    new arrow.Utf8(),
-    CloudTrailVersion.VER_1_07,
-    false,
-  ),
+  mf("eventCategory", new arrow.Utf8(), CloudTrailVersion.VER_1_07, false),
 
   mf("addendum", new arrow.Utf8(), CloudTrailVersion.VER_1_10, true),
 
@@ -376,11 +494,13 @@ export const SCHEMA = new arrow.Schema([
  * @param firstVersionWithField the definitional version at which point this field was introduced
  * @param value the value being serialised
  */
-function throwIfNotAllowedMissingMandatoryString(ver: string, firstVersionWithField: string, value: string | null): string {
-
+function throwIfNotAllowedMissingMandatoryString(
+  ver: string,
+  firstVersionWithField: string,
+  value: string | null,
+): string {
   // if we have a value then we have no problem!
-  if (value != null)
-    return value;
+  if (value != null) return value;
 
   // if it is null we need to check if that is allowable - given it is a non-null field
 
@@ -391,40 +511,133 @@ function throwIfNotAllowedMissingMandatoryString(ver: string, firstVersionWithFi
     throw new Error(`malformed eventVersion string of ${ver}`);
 
   if (parseInt(parts[0]!) > parseInt(firstVersionParts[0]!))
-    throw new Error(`this field was null but the event version of ${ver} means that it must be present`);
+    throw new Error(
+      `this field was null but the event version of ${ver} means that it must be present`,
+    );
 
   if (parseInt(parts[0]!) == parseInt(firstVersionParts[0]!)) {
     if (parseInt(parts[1]!) >= parseInt(firstVersionParts[1]!))
-      throw new Error(`this field was null but the event version of ${ver} means that it must be present`);
+      throw new Error(
+        `this field was null but the event version of ${ver} means that it must be present`,
+      );
   }
 
   return `Pre${firstVersionWithField}SchemaNull`;
 }
 
-
-// ── Flatten a single CloudTrail record to a typed row ─────────────────────────
+/**
+ * Flattens the JSON structure expected from a CloudTrail event
+ * and returns a converted record that matches exactly the
+ * data we will be pushing into the Arrow table.
+ * @param r
+ */
 export function flattenRecord(r: any): FlatRecord {
   const ui = r.userIdentity ?? {};
   const ec = r.eventContext ?? {};
 
   const ver = str(r.eventVersion);
 
-  if (!ver)
-    throw new Error("eventVersion is a mandatory field");
+  if (!ver) throw new Error("eventVersion is a mandatory field");
 
   return {
     eventTime: ts(r.eventTime),
     eventVersion: str(r.eventVersion),
-    userIdentity: r.userIdentity == null ? null : {
-      type: str(ui.type),
-      principalId: str(ui.principalId),
-      arn: str(ui.arn),
-      accountId: str(ui.accountId),
-      accessKeyId: str(ui.accessKeyId),
-      userName: str(ui.userName),
-      invokedBy: str(ui.invokedBy),
-      sessionContext: json(ui.sessionContext),
-    },
+    userIdentity:
+      r.userIdentity == null
+        ? null
+        : {
+            type: str(ui.type),
+            principalId: str(ui.principalId),
+            arn: str(ui.arn),
+            accountId: str(ui.accountId),
+            accessKeyId: str(ui.accessKeyId),
+            userName: str(ui.userName),
+            invokedBy: str(ui.invokedBy),
+            invokedByDelegate:
+              ui.invokedByDelegate == null
+                ? null
+                : { accountId: str(ui.invokedByDelegate.accountId) },
+            sessionContext:
+              ui.sessionContext == null
+                ? null
+                : {
+                    sessionIssuer:
+                      ui.sessionContext.sessionIssuer == null
+                        ? null
+                        : {
+                            type: str(ui.sessionContext.sessionIssuer.type),
+                            userName: str(
+                              ui.sessionContext.sessionIssuer.userName,
+                            ),
+                            principalId: str(
+                              ui.sessionContext.sessionIssuer.principalId,
+                            ),
+                            arn: str(ui.sessionContext.sessionIssuer.arn),
+                            accountId: str(
+                              ui.sessionContext.sessionIssuer.accountId,
+                            ),
+                          },
+                    webIdFederationData:
+                      ui.sessionContext.webIdFederationData == null
+                        ? null
+                        : {
+                            federatedProvider: str(
+                              ui.sessionContext.webIdFederationData
+                                .federatedProvider,
+                            ),
+                            attributes:
+                              ui.sessionContext.webIdFederationData
+                                .attributes == null
+                                ? null
+                                : {
+                                    appid: str(
+                                      ui.sessionContext.webIdFederationData
+                                        .attributes.appid,
+                                    ),
+                                    aud: str(
+                                      ui.sessionContext.webIdFederationData
+                                        .attributes.aud,
+                                    ),
+                                  },
+                          },
+                    attributes:
+                      ui.sessionContext.attributes == null
+                        ? null
+                        : {
+                            creationDate: str(
+                              ui.sessionContext.attributes.creationDate,
+                            ),
+                            mfaAuthenticated: str(
+                              ui.sessionContext.attributes.mfaAuthenticated,
+                            ),
+                            sessionCredentialFromConsole: str(
+                              ui.sessionContext.attributes
+                                .sessionCredentialFromConsole,
+                            ),
+                          },
+                    assumedRoot: str(ui.sessionContext.assumedRoot),
+                    sourceIdentity: str(ui.sessionContext.sourceIdentity),
+                    ec2RoleDelivery: str(ui.sessionContext.ec2RoleDelivery),
+                  },
+            onBehalfOf:
+              ui.onBehalfOf == null
+                ? null
+                : {
+                    userId: str(ui.onBehalfOf.userId),
+                    identityStoreArn: str(ui.onBehalfOf.identityStoreArn),
+                  },
+            inScopeOf:
+              ui.inScopeOf == null
+                ? null
+                : {
+                    sourceArn: str(ui.inScopeOf.sourceArn),
+                    sourceAccount: str(ui.inScopeOf.sourceAccount),
+                    issuerType: str(ui.inScopeOf.issuerType),
+                    credentialsIssuedTo: str(ui.inScopeOf.credentialsIssuedTo),
+                  },
+            credentialId: str(ui.credentialId),
+            identityProvider: str(ui.identityProvider),
+          },
     eventSource: str(r.eventSource),
     eventName: str(r.eventName),
     awsRegion: str(r.awsRegion),
@@ -436,8 +649,16 @@ export function flattenRecord(r: any): FlatRecord {
     responseElements: json(r.responseElements),
     additionalEventData: json(r.additionalEventData),
     requestID: str(r.requestID),
-    eventID: throwIfNotAllowedMissingMandatoryString(ver, "1.01", str(r.eventID)),
-    eventType: throwIfNotAllowedMissingMandatoryString(ver, "1.02", str(r.eventType)),
+    eventID: throwIfNotAllowedMissingMandatoryString(
+      ver,
+      "1.01",
+      str(r.eventID),
+    ),
+    eventType: throwIfNotAllowedMissingMandatoryString(
+      ver,
+      "1.02",
+      str(r.eventType),
+    ),
     apiVersion: str(r.apiVersion),
     managementEvent: bool(r.managementEvent) ?? false,
     readOnly: bool(r.readOnly) ?? false,
@@ -453,13 +674,20 @@ export function flattenRecord(r: any): FlatRecord {
     sharedEventID: str(r.sharedEventID),
     vpcEndpointId: str(r.vpcEndpointId),
     vpcEndpointAccountId: str(r.vpcEndpointAccountId),
-    eventCategory: throwIfNotAllowedMissingMandatoryString(ver, "1.07", str(r.eventCategory)),
+    eventCategory: throwIfNotAllowedMissingMandatoryString(
+      ver,
+      "1.07",
+      str(r.eventCategory),
+    ),
     addendum: json(r.addendum),
     sessionCredentialFromConsole: bool(r.sessionCredentialFromConsole) ?? false,
-    eventContext: r.eventContext == null ? null : {
-      requestContext: json(ec.requestContext),
-      tagContext: json(ec.tagContext),
-    },
+    eventContext:
+      r.eventContext == null
+        ? null
+        : {
+            requestContext: json(ec.requestContext),
+            tagContext: json(ec.tagContext),
+          },
     edgeDeviceDetails: json(r.edgeDeviceDetails),
     tlsDetails: json(r.tlsDetails),
   };

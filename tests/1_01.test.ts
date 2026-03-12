@@ -56,7 +56,7 @@ test("1.01", async () => {
   expect(row).toHaveProperty("userIdentity.accessKeyId", "EXAMPLE_KEY_ID");
   expect(row).toHaveProperty("userIdentity.userName", "Alice");
   expect(row).toHaveProperty("userIdentity.invokedBy", null);
-  expect(row).toHaveProperty("userIdentity.sessionContext", null);
+  expect((row as any).userIdentity?.sessionContext).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

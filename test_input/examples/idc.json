@@ -1,0 +1,68 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:user@example.com",
+        "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_ReadOnly_abcdef012345/user@example.com",
+        "accountId": "111122223333",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_ReadOnly_abcdef012345",
+            "accountId": "111122223333",
+            "userName": "AWSReservedSSO_ReadOnly_abcdef012345"
+          },
+          "attributes": {
+            "creationDate": "2024-08-10T14:00:00Z",
+            "mfaAuthenticated": "false"
+          },
+          "assumedRoot": "true"
+        },
+        "onBehalfOf": {
+          "userId": "e0b4f9c0-1234-5678-abcd-ef0123456789",
+          "identityStoreArn": "arn:aws:identitystore::111122223333:identitystore/d-1234567890"
+        },
+        "credentialId": "ACCAQOALEXAMPLECREDENTIAL",
+        "inScopeOf": {
+          "sourceArn": "arn:aws:lambda:us-east-1:111122223333:function:MyFunction",
+          "sourceAccount": "111122223333",
+          "issuerType": "AWS::Lambda::Function",
+          "credentialsIssuedTo": "arn:aws:iam::111122223333:role/MyLambdaRole"
+        }
+      },
+      "eventTime": "2024-08-10T14:05:22Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.50",
+      "userAgent": "aws-internal/3",
+      "requestParameters": {
+        "bucketName": "my-data-bucket",
+        "key": "reports/data.csv"
+      },
+      "responseElements": null,
+      "requestID": "IDCEXAMPLE-1234-5678-abcd-EXAMPLE00001",
+      "eventID": "IDCEXAMPLE-1234-5678-abcd-EXAMPLE00002",
+      "readOnly": true,
+      "resources": [
+        {
+          "type": "AWS::S3::Object",
+          "ARN": "arn:aws:s3:::my-data-bucket/reports/data.csv"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Data",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_256_GCM_SHA384",
+        "clientProvidedHostHeader": "s3.us-east-1.amazonaws.com"
+      }
+    }
+  ]
+}

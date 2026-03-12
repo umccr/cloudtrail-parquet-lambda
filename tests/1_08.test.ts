@@ -50,10 +50,19 @@ test("1.08", async () => {
   expect(row).toHaveProperty("userIdentity.accessKeyId", "AKIAIOSFODNN7EXAMPLE");
   expect(row).toHaveProperty("userIdentity.userName", "Mary");
   expect(row).toHaveProperty("userIdentity.invokedBy", null);
-  expect(row).toHaveProperty(
-    "userIdentity.sessionContext",
-    JSON.stringify({ sessionIssuer: {}, webIdFederationData: {}, attributes: { creationDate: "2023-07-19T21:11:57Z", mfaAuthenticated: "false" } }),
-  );
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.creationDate", "2023-07-19T21:11:57Z");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.mfaAuthenticated", "false");
+
+  // sessionIssuer: {} — struct present but all sub-fields null
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.type", null);
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.userName", null);
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.principalId", null);
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.arn", null);
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.accountId", null);
+
+  // webIdFederationData: {} — struct present, federatedProvider null, nested attributes absent
+  expect(row).toHaveProperty("userIdentity.sessionContext.webIdFederationData.federatedProvider", null);
+  expect((row as any).userIdentity?.sessionContext?.webIdFederationData?.attributes).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

@@ -3,18 +3,26 @@
     {
       "eventVersion": "1.11",
       "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AIDA6ON6E4XEGIEXAMPLE",
-        "arn": "arn:aws:iam::111122223333:user/Terry",
+        "type": "AssumedRole",
+        "principalId": "AIDACKCEVSQ6C2EXAMPLE:Role-Session-Name",
+        "arn": "arn:aws:sts::111122223333:assumed-role/Role-Name/Role-Session-Name",
         "accountId": "111122223333",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Terry",
+        "accessKeyId": "[REDACTED:AWS_ACCESS_KEY]",
         "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+            "arn": "arn:aws:iam::111122223333:role/Admin",
+            "accountId": "111122223333",
+            "userName": "Admin"
+          },
           "attributes": {
-            "creationDate": "2024-06-01T08:00:00Z",
-            "mfaAuthenticated": "true",
-            "sessionCredentialFromConsole": "false"
+            "creationDate": "2024-09-09T17:50:16Z",
+            "mfaAuthenticated": "false"
           }
+        },
+        "invokedByDelegate": {
+          "accountId": "444455556666"
         }
       },
       "eventTime": "2024-06-01T08:12:47Z",
@@ -71,13 +79,15 @@
           }
         },
         "tagContext": {
-          "resourceTags": [{
-            "arn": "arn:aws:s3:::my-secure-bucket",
-            "tags": {
-              "Environment": "prod",
-              "DataClassification": "sensitive"
+          "resourceTags": [
+            {
+              "arn": "arn:aws:s3:::my-secure-bucket",
+              "tags": {
+                "Environment": "prod",
+                "DataClassification": "sensitive"
+              }
             }
-          }]
+          ]
         }
       }
     }

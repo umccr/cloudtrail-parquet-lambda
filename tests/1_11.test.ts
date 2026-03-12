@@ -38,18 +38,27 @@ test("1.11", async () => {
   expect(row).toHaveProperty("sessionCredentialFromConsole", false);
   expect(row).toHaveProperty("edgeDeviceDetails", null);
 
-  // userIdentity nested struct
-  expect(row).toHaveProperty("userIdentity.type", "IAMUser");
-  expect(row).toHaveProperty("userIdentity.principalId", "AIDA6ON6E4XEGIEXAMPLE");
-  expect(row).toHaveProperty("userIdentity.arn", "arn:aws:iam::111122223333:user/Terry");
+  // userIdentity nested struct (AssumedRole with invokedByDelegate)
+  expect(row).toHaveProperty("userIdentity.type", "AssumedRole");
+  expect(row).toHaveProperty("userIdentity.principalId", "AIDACKCEVSQ6C2EXAMPLE:Role-Session-Name");
+  expect(row).toHaveProperty("userIdentity.arn", "arn:aws:sts::111122223333:assumed-role/Role-Name/Role-Session-Name");
   expect(row).toHaveProperty("userIdentity.accountId", "111122223333");
-  expect(row).toHaveProperty("userIdentity.accessKeyId", "AKIAIOSFODNN7EXAMPLE");
-  expect(row).toHaveProperty("userIdentity.userName", "Terry");
+  expect(row).toHaveProperty("userIdentity.accessKeyId", "[REDACTED:AWS_ACCESS_KEY]");
+  expect(row).toHaveProperty("userIdentity.userName", null);
   expect(row).toHaveProperty("userIdentity.invokedBy", null);
-  expect(row).toHaveProperty(
-    "userIdentity.sessionContext",
-    JSON.stringify({ attributes: { creationDate: "2024-06-01T08:00:00Z", mfaAuthenticated: "true", sessionCredentialFromConsole: "false" } }),
-  );
+  expect(row).toHaveProperty("userIdentity.invokedByDelegate.accountId", "444455556666");
+  expect((row as any).userIdentity?.onBehalfOf).toBeUndefined();
+  expect((row as any).userIdentity?.inScopeOf).toBeUndefined();
+  expect(row).toHaveProperty("userIdentity.credentialId", null);
+  expect(row).toHaveProperty("userIdentity.identityProvider", null);
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.type", "Role");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.principalId", "AIDACKCEVSQ6C2EXAMPLE");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.arn", "arn:aws:iam::111122223333:role/Admin");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.accountId", "111122223333");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.userName", "Admin");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.creationDate", "2024-09-09T17:50:16Z");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.mfaAuthenticated", "false");
+  expect((row as any).userIdentity?.sessionContext?.webIdFederationData).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

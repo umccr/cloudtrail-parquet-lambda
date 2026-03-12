@@ -10,13 +10,12 @@
 
 import { handler } from "./src/entrypoint_handler";
 
-process.env.PROCESS_DATE = "2020-09-30";
-
 const mockEvent = {
   baseInputPath: "test_input/",
   baseOutputPath: "test_output/",
   organisationId: "o-abcd",
   accountId: "811596193553",
+  processDate: "2020-09-30",
 };
 
 const mockContext = {

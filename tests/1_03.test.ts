@@ -52,10 +52,14 @@ test("1.03", async () => {
   expect(row).toHaveProperty("userIdentity.accessKeyId", "ASIAIOSFODNN7EXAMPLE");
   expect(row).toHaveProperty("userIdentity.userName", null);
   expect(row).toHaveProperty("userIdentity.invokedBy", null);
-  expect(row).toHaveProperty(
-    "userIdentity.sessionContext",
-    JSON.stringify({ sessionIssuer: { type: "Role", principalId: "AROAI3FHNTUD3XMDE2RFF", arn: "arn:aws:iam::123456789012:role/MyRole", accountId: "123456789012", userName: "MyRole" }, attributes: { mfaAuthenticated: "false", creationDate: "2016-03-14T13:51:37Z" } }),
-  );
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.type", "Role");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.principalId", "AROAI3FHNTUD3XMDE2RFF");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.arn", "arn:aws:iam::123456789012:role/MyRole");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.accountId", "123456789012");
+  expect(row).toHaveProperty("userIdentity.sessionContext.sessionIssuer.userName", "MyRole");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.mfaAuthenticated", "false");
+  expect(row).toHaveProperty("userIdentity.sessionContext.attributes.creationDate", "2016-03-14T13:51:37Z");
+  expect((row as any).userIdentity?.sessionContext?.webIdFederationData).toBeUndefined();
 
   // JSON-serialised complex fields
   expect(row).toHaveProperty(

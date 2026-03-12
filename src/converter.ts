@@ -213,7 +213,7 @@ export async function* convertSingle(
         // our parquet be too large
         // (helps also with memory usage of our lambda)
         if (batches.length >= parquetRowGroupsPerFile) {
-          console.log(
+          console.debug(
             `Yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
           );
           yield await writeBatchesToParquet(batches, compression);
@@ -232,7 +232,7 @@ export async function* convertSingle(
     // if we actually found nothing at all then exit without having
     // yielded
   } else {
-    console.log(
+    console.debug(
       `Last yielding parquet file at record count ${recordsFound}, batch count ${batches.length}, buffer count ${buffer.length}`,
     );
     yield await writeBatchesToParquet(batches, compression);

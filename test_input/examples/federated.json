@@ -1,0 +1,63 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.11",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:federated-session",
+        "arn": "arn:aws:sts::111122223333:assumed-role/WebIdentityRole/federated-session",
+        "accountId": "111122223333",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE2",
+        "identityProvider": "https://accounts.google.com",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::111122223333:role/WebIdentityRole",
+            "accountId": "111122223333",
+            "userName": "WebIdentityRole"
+          },
+          "webIdFederationData": {
+            "federatedProvider": "https://accounts.google.com",
+            "attributes": {
+              "appid": "123456789.apps.googleusercontent.com",
+              "aud": "123456789.apps.googleusercontent.com"
+            }
+          },
+          "attributes": {
+            "creationDate": "2024-08-10T15:00:00Z",
+            "mfaAuthenticated": "false"
+          },
+          "sourceIdentity": "john.doe@example.com",
+          "ec2RoleDelivery": "2.0"
+        }
+      },
+      "eventTime": "2024-08-10T15:10:45Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-west-2",
+      "sourceIPAddress": "192.0.2.100",
+      "userAgent": "aws-sdk-python/3.0.0",
+      "requestParameters": {
+        "bucketName": "user-uploads-bucket",
+        "key": "uploads/john/file.txt"
+      },
+      "responseElements": {
+        "x-amz-request-id": "FEDEXAMPLE0REQID00001",
+        "x-amz-id-2": "FEDEXAMPLEID2000001"
+      },
+      "requestID": "FEDEXAMPLE-1234-5678-abcd-EXAMPLE00003",
+      "eventID": "FEDEXAMPLE-1234-5678-abcd-EXAMPLE00004",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Data",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_256_GCM_SHA384",
+        "clientProvidedHostHeader": "s3.us-west-2.amazonaws.com"
+      }
+    }
+  ]
+}
