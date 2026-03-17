@@ -43,6 +43,54 @@
       "managementEvent": true,
       "recipientAccountId": "888888888888",
       "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGITEXAMPLE",
+        "arn": "arn:aws:iam::888888888888:user/Mary",
+        "accountId": "888888888888",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Mary",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "creationDate": "2023-07-19T21:11:57Z",
+            "mfaAuthenticated": "false"
+          }
+        }
+      },
+      "eventTime": "2023-07-19T21:30:00Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.0",
+      "userAgent": "aws-cli/2.13.5 Python/3.11.4",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::999999999999:role/CrossAccountRole",
+        "roleSessionName": "MarySession",
+        "durationSeconds": 3600
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+          "sessionToken": "AQoXnyc4lcK4w4OIaYnuLS//////////wEaoAK1wvxJY12r2IrDFT2IvAzTCn3zHoZ7YNtpiQLF0MqZye/qwjzP2iEXAMPLEbw/m3hsj8VBTkPORGvr9jM5sgP+w9IZWZnU+LWhmg+a5fDi2oTGUYcdg9uexQ4mtCHIHfi4citgqZTgco40Yqr4lIlo4V2b2Dyauk0eYFNebHtYlFVgAUj+7Indz3LU0aTWk1WKIjHmmMCIoTkyYp/k7kUG7moeEXAMPLE=",
+          "expiration": "Jul 19, 2023 10:30:00 PM"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROA6ON6E4XEEXAMPLE123:MarySession",
+          "arn": "arn:aws:sts::999999999999:assumed-role/CrossAccountRole/MarySession"
+        }
+      },
+      "requestID": "7d638c76-329e-4444-9a8d-EXAMPLEb1cc2",
+      "eventID": "BEXAMPLE-f1d4-4e5a-a32c-EXAMPLE6d1ef",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "888888888888",
+      "eventCategory": "Management"
     }
   ]
 }

@@ -6,6 +6,58 @@ import { Compression } from "parquet-wasm/node";
 import { listChildFolders } from "./lister_folders";
 import { listChildFiles } from "./lister_files";
 
+// Events matching these (eventSource, eventName) pairs are discarded during
+// conversion — high-volume automated operations with minimal analytical value.
+// For KMS only the automated crypto operations are dropped; management events
+// (CreateKey, PutKeyPolicy, ScheduleKeyDeletion, etc.) are kept.
+const DISCARDED_EVENTS: Map<string, Set<string>> = new Map([
+  [
+    "kms.amazonaws.com",
+    new Set([
+      // Crypto operations called constantly by AWS services (S3, EBS,
+      // Secrets Manager, etc.) — not user-triggered.
+      "Decrypt",
+      "Encrypt",
+      "GenerateDataKey",
+      "GenerateDataKeyWithoutPlaintext",
+      "GenerateDataKeyPair",
+      "GenerateDataKeyPairWithoutPlaintext",
+      "ReEncryptFrom",
+      "ReEncryptTo",
+      "Sign",
+      "Verify",
+      // Read-only describe/list noise.
+      "DescribeKey",
+      "GetKeyPolicy",
+      "GetKeyRotationStatus",
+      "GetPublicKey",
+      "ListAliases",
+      "ListGrants",
+      "ListKeyPolicies",
+      "ListKeys",
+      "ListResourceTags",
+      "ListRetirableGrants",
+    ]),
+  ],
+  [
+    "rds.amazonaws.com",
+    new Set([
+      // High-frequency automated describe/monitoring calls.
+      "DescribeDBInstances",
+      "DescribeDBClusters",
+      "DescribeDBLogFiles",
+      "DescribeEvents",
+      "DescribeDBEngineVersions",
+      "DescribeDBParameterGroups",
+      "DescribeDBParameters",
+      "DescribeDBSubnetGroups",
+      "DescribeOptionGroups",
+      "DescribePendingMaintenanceActions",
+      "DownloadDBLogFilePortion",
+    ]),
+  ],
+]);
+
 /**
  * Enumerates through a set of CloudTrail folders and writes out
  * corresponding Parquet versions.
@@ -198,6 +250,8 @@ export async function* convertSingle(
     // stream records continuously from each one
     // and build batches
     for await (const record of streamRecords(logFilePath, eventTimePrefix)) {
+      if (DISCARDED_EVENTS.get(record.eventSource)?.has(record.eventName)) continue;
+
       recordsFound++;
 
       buffer.push(flattenRecord(record));

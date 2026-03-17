@@ -13,7 +13,7 @@ test("1.03", async () => {
   // Core event fields present in the JSON
   expect(row).toHaveProperty("eventVersion", "1.03");
   expect(row).toHaveProperty("eventSource", "kms.amazonaws.com");
-  expect(row).toHaveProperty("eventName", "Encrypt");
+  expect(row).toHaveProperty("eventName", "PutKeyPolicy");
   expect(row).toHaveProperty("awsRegion", "us-east-1");
   expect(row).toHaveProperty("sourceIPAddress", "192.0.2.1");
   expect(row).toHaveProperty("userAgent", "aws-sdk-java/1.11.0");
@@ -64,7 +64,7 @@ test("1.03", async () => {
   // JSON-serialised complex fields
   expect(row).toHaveProperty(
     "requestParameters",
-    JSON.stringify({ keyId: "arn:aws:kms:us-east-1:999999999999:key/mrk-EXAMPLE", encryptionAlgorithm: "SYMMETRIC_DEFAULT" }),
+    JSON.stringify({ keyId: "arn:aws:kms:us-east-1:999999999999:key/mrk-EXAMPLE", policyName: "default", policy: "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"},\"Action\":\"kms:*\",\"Resource\":\"*\"}]}" }),
   );
 
   // resources list

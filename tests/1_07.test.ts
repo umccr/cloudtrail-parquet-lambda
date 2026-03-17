@@ -13,14 +13,14 @@ test("1.07", async () => {
   // Core event fields present in the JSON
   expect(row).toHaveProperty("eventVersion", "1.07");
   expect(row).toHaveProperty("eventSource", "kms.amazonaws.com");
-  expect(row).toHaveProperty("eventName", "Decrypt");
+  expect(row).toHaveProperty("eventName", "CreateKey");
   expect(row).toHaveProperty("awsRegion", "us-east-1");
   expect(row).toHaveProperty("sourceIPAddress", "192.0.2.10");
   expect(row).toHaveProperty("userAgent", "aws-sdk-java/2.17.0");
   expect(row).toHaveProperty("requestID", "AEXAMPLE-1234-5678-abcd-EXAMPLE00010");
   expect(row).toHaveProperty("eventID", "BEXAMPLE-1234-5678-abcd-EXAMPLE00011");
   expect(row).toHaveProperty("eventType", "AwsApiCall");
-  expect(row).toHaveProperty("readOnly", true);
+  expect(row).toHaveProperty("readOnly", false);
   expect(row).toHaveProperty("managementEvent", false);
   expect(row).toHaveProperty("recipientAccountId", "111122223333");
   expect(row).toHaveProperty("eventCategory", "Management");
@@ -40,7 +40,10 @@ test("1.07", async () => {
   expect(row).toHaveProperty("edgeDeviceDetails", null);
   expect(row).toHaveProperty("tlsDetails", null);
   expect(row.eventContext).toBeUndefined();
-  expect(row).toHaveProperty("responseElements", null);
+  expect(row).toHaveProperty(
+    "responseElements",
+    JSON.stringify({ keyMetadata: { keyId: "mrk-EXAMPLE1234", arn: "arn:aws:kms:us-east-1:999988887777:key/mrk-EXAMPLE1234", creationDate: "Apr 10, 2021 8:14:22 AM", enabled: true, description: "My application key", keyUsage: "ENCRYPT_DECRYPT", keyState: "Enabled", origin: "AWS_KMS", keyManager: "CUSTOMER", keySpec: "SYMMETRIC_DEFAULT", multiRegion: false } }),
+  );
 
   // userIdentity nested struct (AssumedRole — no userName)
   expect(row).toHaveProperty("userIdentity.type", "AssumedRole");
@@ -62,7 +65,7 @@ test("1.07", async () => {
   // JSON-serialised complex fields
   expect(row).toHaveProperty(
     "requestParameters",
-    JSON.stringify({ keyId: "arn:aws:kms:us-east-1:999988887777:key/mrk-EXAMPLE1234", encryptionAlgorithm: "SYMMETRIC_DEFAULT" }),
+    JSON.stringify({ description: "My application key", keyUsage: "ENCRYPT_DECRYPT", keySpec: "SYMMETRIC_DEFAULT", origin: "AWS_KMS" }),
   );
 
   // resources list

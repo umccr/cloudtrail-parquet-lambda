@@ -24,13 +24,14 @@
       },
       "eventTime": "2016-03-14T13:52:20Z",
       "eventSource": "kms.amazonaws.com",
-      "eventName": "Encrypt",
+      "eventName": "PutKeyPolicy",
       "awsRegion": "us-east-1",
       "sourceIPAddress": "192.0.2.1",
       "userAgent": "aws-sdk-java/1.11.0",
       "requestParameters": {
         "keyId": "arn:aws:kms:us-east-1:999999999999:key/mrk-EXAMPLE",
-        "encryptionAlgorithm": "SYMMETRIC_DEFAULT"
+        "policyName": "default",
+        "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"},\"Action\":\"kms:*\",\"Resource\":\"*\"}]}"
       },
       "responseElements": null,
       "requestID": "3EXAMPLE-0a1b-2c3d-4e5f-0a1b2c3d4e5f",

@@ -105,6 +105,21 @@ const ts = (v: unknown): bigint | null =>
 const json = (v: unknown): string | null =>
   v == null ? null : JSON.stringify(v);
 
+// Recursively redact known high-cardinality / sensitive keys that add no
+// analytical value when stored in Parquet (e.g. STS session tokens).
+const REDACTED_KEYS = new Set(["sessionToken", "x-amz-id-2"]);
+function redactSensitive(v: unknown): unknown {
+  if (v == null || typeof v !== "object") return v;
+  if (Array.isArray(v)) return v.map(redactSensitive);
+  const out: Record<string, unknown> = {};
+  for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+    out[k] = REDACTED_KEYS.has(k) ? "-" : redactSensitive(val);
+  }
+  return out;
+}
+const jsonRedacted = (v: unknown): string | null =>
+  v == null ? null : JSON.stringify(redactSensitive(v));
+
 export enum CloudTrailVersion {
   VER_1_0,
   VER_1_01,
@@ -646,8 +661,8 @@ export function flattenRecord(r: any): FlatRecord {
     errorCode: str(r.errorCode),
     errorMessage: str(r.errorMessage),
     requestParameters: json(r.requestParameters),
-    responseElements: json(r.responseElements),
-    additionalEventData: json(r.additionalEventData),
+    responseElements: jsonRedacted(r.responseElements),
+    additionalEventData: jsonRedacted(r.additionalEventData),
     requestID: str(r.requestID),
     eventID: throwIfNotAllowedMissingMandatoryString(
       ver,

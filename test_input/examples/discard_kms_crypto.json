@@ -1,0 +1,141 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAI3FHNTUD3XMDE2RFF:app-session",
+        "arn": "arn:aws:sts::111122223333:assumed-role/AppRole/app-session",
+        "accountId": "111122223333",
+        "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAI3FHNTUD3XMDE2RFF",
+            "arn": "arn:aws:iam::111122223333:role/AppRole",
+            "accountId": "111122223333",
+            "userName": "AppRole"
+          },
+          "webIdFederationData": {},
+          "attributes": {
+            "creationDate": "2023-11-01T09:00:00Z",
+            "mfaAuthenticated": "false"
+          }
+        }
+      },
+      "eventTime": "2023-11-01T09:05:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "ap-southeast-2",
+      "sourceIPAddress": "192.0.2.50",
+      "userAgent": "aws-sdk-python/1.34.0",
+      "requestParameters": {
+        "bucketName": "my-app-bucket",
+        "key": "data/file.txt"
+      },
+      "responseElements": {
+        "x-amz-request-id": "KEEPREQID00001",
+        "x-amz-id-2": "KEEPID200001"
+      },
+      "requestID": "KEEPREQID00001",
+      "eventID": "KEEP-0001-5678-abcd-EXAMPLE00001",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Data"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSService",
+        "invokedBy": "s3.amazonaws.com"
+      },
+      "eventTime": "2023-11-01T09:05:01Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "GenerateDataKey",
+      "awsRegion": "ap-southeast-2",
+      "sourceIPAddress": "s3.amazonaws.com",
+      "userAgent": "s3.amazonaws.com",
+      "requestParameters": {
+        "keyId": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-DISCARD0001",
+        "keySpec": "AES_256"
+      },
+      "responseElements": null,
+      "requestID": "DISCARDREQID0001",
+      "eventID": "DISCARD-0001-5678-abcd-EXAMPLE00002",
+      "readOnly": false,
+      "resources": [
+        {
+          "accountId": "111122223333",
+          "type": "AWS::KMS::Key",
+          "ARN": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-DISCARD0001"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGITEXAMPLE",
+        "arn": "arn:aws:iam::111122223333:user/Alice",
+        "accountId": "111122223333",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Alice",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "creationDate": "2023-11-01T09:00:00Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
+      "eventTime": "2023-11-01T09:10:00Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "CreateKey",
+      "awsRegion": "ap-southeast-2",
+      "sourceIPAddress": "192.0.2.51",
+      "userAgent": "aws-cli/2.13.5 Python/3.11.4",
+      "requestParameters": {
+        "description": "New key for app data",
+        "keyUsage": "ENCRYPT_DECRYPT",
+        "keySpec": "SYMMETRIC_DEFAULT",
+        "origin": "AWS_KMS"
+      },
+      "responseElements": {
+        "keyMetadata": {
+          "keyId": "mrk-KEEP0002",
+          "arn": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-KEEP0002",
+          "creationDate": "Nov 1, 2023 9:10:00 AM",
+          "enabled": true,
+          "description": "New key for app data",
+          "keyUsage": "ENCRYPT_DECRYPT",
+          "keyState": "Enabled",
+          "origin": "AWS_KMS",
+          "keyManager": "CUSTOMER",
+          "keySpec": "SYMMETRIC_DEFAULT",
+          "multiRegion": false
+        }
+      },
+      "requestID": "KEEPREQID00002",
+      "eventID": "KEEP-0002-5678-abcd-EXAMPLE00003",
+      "readOnly": false,
+      "resources": [
+        {
+          "accountId": "111122223333",
+          "type": "AWS::KMS::Key",
+          "ARN": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-KEEP0002"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Management"
+    }
+  ]
+}

@@ -58,7 +58,7 @@ test("1.06", async () => {
   );
   expect(row).toHaveProperty(
     "additionalEventData",
-    JSON.stringify({ SignatureVersion: "SigV4", CipherSuite: "ECDHE-RSA-AES128-SHA", bytesTransferredOut: 12345, "x-amz-id-2": "EXAMPLE" }),
+    JSON.stringify({ SignatureVersion: "SigV4", CipherSuite: "ECDHE-RSA-AES128-SHA", bytesTransferredOut: 12345, "x-amz-id-2": "-" }),
   );
 
   // resources list (2 entries; first has no accountId)

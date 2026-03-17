@@ -7,7 +7,7 @@ test("1.08", async () => {
   expect(pq).toBeObject();
 
   const rows = await readParquetBuffer(pq!);
-  expect(rows).toBeArrayOfSize(1);
+  expect(rows).toBeArrayOfSize(2);
   const row = rows[0]!;
 
   // Core event fields present in the JSON
@@ -72,5 +72,28 @@ test("1.08", async () => {
   expect(row).toHaveProperty(
     "responseElements",
     JSON.stringify({ user: { path: "/", arn: "arn:aws:iam::888888888888:user/Richard", userId: "AIDA6ON6E4XEP7EXAMPLE", createDate: "Jul 19, 2023 9:25:09 PM", userName: "Richard" } }),
+  );
+
+  // AssumeRole record — verifies credentials + assumedRoleUser in responseElements
+  const assumeRoleRow = rows[1]!;
+  expect(assumeRoleRow).toHaveProperty("eventSource", "sts.amazonaws.com");
+  expect(assumeRoleRow).toHaveProperty("eventName", "AssumeRole");
+  expect(assumeRoleRow).toHaveProperty(
+    "requestParameters",
+    JSON.stringify({ roleArn: "arn:aws:iam::999999999999:role/CrossAccountRole", roleSessionName: "MarySession", durationSeconds: 3600 }),
+  );
+  expect(assumeRoleRow).toHaveProperty(
+    "responseElements",
+    JSON.stringify({
+      credentials: {
+        accessKeyId: "ASIAIOSFODNN7EXAMPLE",
+        sessionToken: "-",
+        expiration: "Jul 19, 2023 10:30:00 PM",
+      },
+      assumedRoleUser: {
+        assumedRoleId: "AROA6ON6E4XEEXAMPLE123:MarySession",
+        arn: "arn:aws:sts::999999999999:assumed-role/CrossAccountRole/MarySession",
+      },
+    }),
   );
 });

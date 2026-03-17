@@ -7,7 +7,7 @@ test("1.11", async () => {
   expect(pq).toBeObject();
 
   const rows = await readParquetBuffer(pq!);
-  expect(rows).toBeArrayOfSize(1);
+  expect(rows).toBeArrayOfSize(2);
   const row = rows[0]!;
 
   // Core event fields present in the JSON
@@ -67,11 +67,11 @@ test("1.11", async () => {
   );
   expect(row).toHaveProperty(
     "responseElements",
-    JSON.stringify({ "x-amz-request-id": "EXAMPLE0REQID00001", "x-amz-id-2": "EXAMPLEID2000001" }),
+    JSON.stringify({ "x-amz-request-id": "EXAMPLE0REQID00001", "x-amz-id-2": "-" }),
   );
   expect(row).toHaveProperty(
     "additionalEventData",
-    JSON.stringify({ SignatureVersion: "SigV4", CipherSuite: "TLS_AES_256_GCM_SHA384", bytesTransferredIn: 204800, bytesTransferredOut: 0, SSEApplied: "SSE-KMS", "x-amz-id-2": "EXAMPLEID2000001" }),
+    JSON.stringify({ SignatureVersion: "SigV4", CipherSuite: "TLS_AES_256_GCM_SHA384", bytesTransferredIn: 204800, bytesTransferredOut: 0, SSEApplied: "SSE-KMS", "x-amz-id-2": "-" }),
   );
   expect(row).toHaveProperty(
     "tlsDetails",
@@ -93,4 +93,32 @@ test("1.11", async () => {
   expect(row).toHaveProperty("resources.1.accountId", "111122223333");
   expect(row).toHaveProperty("resources.1.type", "AWS::S3::Bucket");
   expect(row).toHaveProperty("resources.1.ARN", "arn:aws:s3:::my-secure-bucket");
+
+  // AssumeRole record — verifies credentials + assumedRoleUser in responseElements
+  const assumeRoleRow = rows[1]!;
+  expect(assumeRoleRow).toHaveProperty("eventSource", "sts.amazonaws.com");
+  expect(assumeRoleRow).toHaveProperty("eventName", "AssumeRole");
+  expect(assumeRoleRow).toHaveProperty("managementEvent", true);
+  expect(assumeRoleRow).toHaveProperty("eventCategory", "Management");
+  expect(assumeRoleRow).toHaveProperty(
+    "requestParameters",
+    JSON.stringify({ roleArn: "arn:aws:iam::111122223333:role/Admin", roleSessionName: "Role-Session-Name", durationSeconds: 3600 }),
+  );
+  expect(assumeRoleRow).toHaveProperty(
+    "responseElements",
+    JSON.stringify({
+      credentials: {
+        accessKeyId: "ASIAIOSFODNN7EXAMPLE3",
+        sessionToken: "-",
+        expiration: "Jun 1, 2024 9:15:00 AM",
+      },
+      assumedRoleUser: {
+        assumedRoleId: "AIDACKCEVSQ6C2EXAMPLE:Role-Session-Name",
+        arn: "arn:aws:sts::111122223333:assumed-role/Admin/Role-Session-Name",
+      },
+    }),
+  );
+  expect(assumeRoleRow).toHaveProperty("resources.0.type", "AWS::IAM::Role");
+  expect(assumeRoleRow).toHaveProperty("resources.0.ARN", "arn:aws:iam::111122223333:role/Admin");
+  expect(assumeRoleRow).toHaveProperty("resources.0.accountId", "111122223333");
 });
