@@ -4,10 +4,7 @@ import { pick } from "stream-json/filters/Pick.js";
 import { streamArray } from "stream-json/streamers/StreamArray.js";
 import { Readable } from "stream";
 import { createGunzip } from "zlib";
-import {
-  S3Client,
-  GetObjectCommand
-} from "@aws-sdk/client-s3";
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { isS3Uri, parseS3Uri } from "./s3_uri";
 
 /**
@@ -54,9 +51,7 @@ export async function* streamRecords(
     if (String(et).startsWith(eventTimePrefix)) {
       yield value;
       yielded++;
-    }
-    else
-      skipped++;
+    } else skipped++;
   }
 
   console.debug(

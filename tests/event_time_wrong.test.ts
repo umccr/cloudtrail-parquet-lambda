@@ -1,8 +1,8 @@
 import { expect, test } from "bun:test";
 import { convertSingle } from "../src/converter";
-import { readParquetBuffer } from "./hyparquet_helper";
+import { readParquetBuffer } from "./helpers/hyparquet_helper";
 import { Compression } from "parquet-wasm";
-import { getFirstConversion } from "./convert_helper";
+import { getFirstConversion } from "./helpers/convert_helper";
 
 test("event time wrong", async () => {
 

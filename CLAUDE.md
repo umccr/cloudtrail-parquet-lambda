@@ -48,7 +48,7 @@ S3 CloudTrail JSON (gzipped) → reader.ts → converter.ts → writer.ts → S3
 
 3. **`src/reader.ts`** — Streaming JSON reader using `stream-json`. Handles gzip decompression, S3 reads, and local file reads. Filters records by `eventTimePrefix`.
 
-4. **`src/schema.ts`** — Defines the `FlatRecord` TypeScript type, the Apache Arrow `SCHEMA`, and `flattenRecord()`. All CloudTrail versions (1.0–1.11) are **upgraded to the latest schema**; missing mandatory fields from older versions are filled with a sentinel string like `Pre1.07SchemaNull`. Nested objects (`requestParameters`, `responseElements`, `userIdentity.sessionContext`, etc.) are serialised as JSON strings. `eventTime` is stored as `TimestampMillisecond` (bigint).
+4. **`src/cloudtrail_arrow_schema.ts`** — Defines the `FlatRecord` TypeScript type, the Apache Arrow `Cloudtrail_arrow_schema`, and `flattenRecord()`. All CloudTrail versions (1.0–1.11) are **upgraded to the latest schema**; missing mandatory fields from older versions are filled with a sentinel string like `Pre1.07SchemaNull`. Nested objects (`requestParameters`, `responseElements`, `userIdentity.sessionContext`, etc.) are serialised as JSON strings. `eventTime` is stored as `TimestampMillisecond` (bigint).
 
 5. **`src/writer.ts`** — Converts Arrow `RecordBatch[]` to Parquet via `parquet-wasm` (IPC bridge). Writes to S3 or local filesystem. Compression defaults to Snappy.
 

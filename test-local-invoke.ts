@@ -3,9 +3,10 @@
  * test-local-invoke.ts
  *
  * Runs the Lambda handler locally with a mock scheduled event content.
+ * Output can then be manually inspected in test_output/.
  *
  * Usage:
- *   bun run local-invoke.ts
+ *   bun run test-local-invoke.ts
  */
 
 import { handler } from "./src/entrypoint_handler";

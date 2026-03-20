@@ -1,124 +1,20 @@
 import * as arrow from "apache-arrow";
+import type { FlatRecordKeys } from "./cloudtrail_to_arrow";
 
 /**
- * The flattened Typescript record that is inserted into the
- * Parquet output. Each field here maps one to one with
- * a field in the schema. Note that the Typescript definition
- * here does not define the optionality of any field, for
- * that need to check the Schema itself.
+ * An arrow schema for CloudTrail events.
+ *
+ * This is hand-crafted from the CloudTrail docs, and we are prepared to alter
+ * definitions as needed (i.e. it does not need to match any official
+ * cloudtrail schema published by AWS).
+ *
+ * All events are upgraded to match the latest version schema - so fields
+ * that are not present in say 1.0 but are mandatory in say 1.7 - will be added
+ * with a default value.
+ *
+ * We are looking to introduce JSON encoding types once they arrive
+ * in Arrow - https://github.com/apache/arrow-rs/issues/8480
  */
-export type FlatRecord = {
-  eventVersion: string | null;
-  eventTime: bigint | null;
-  eventSource: string | null;
-  eventName: string | null;
-  eventID: string | null;
-  eventType: string | null;
-  awsRegion: string | null;
-  recipientAccountId: string | null;
-  requestID: string | null;
-  apiVersion: string | null;
-  managementEvent: boolean | null;
-  readOnly: boolean | null;
-  sourceIPAddress: string | null;
-  userAgent: string | null;
-  vpcEndpointId: string | null;
-  errorCode: string | null;
-  errorMessage: string | null;
-  userIdentity: {
-    type: string | null;
-    principalId: string | null;
-    arn: string | null;
-    accountId: string | null;
-    accessKeyId: string | null;
-    userName: string | null;
-    invokedBy: string | null;
-    invokedByDelegate: { accountId: string | null } | null;
-    sessionContext: {
-      sessionIssuer: {
-        type: string | null;
-        userName: string | null;
-        principalId: string | null;
-        arn: string | null;
-        accountId: string | null;
-      } | null;
-      webIdFederationData: {
-        federatedProvider: string | null;
-        attributes: {
-          appid: string | null;
-          aud: string | null;
-        } | null;
-      } | null;
-      attributes: {
-        creationDate: string | null;
-        mfaAuthenticated: string | null;
-        sessionCredentialFromConsole: string | null;
-      } | null;
-      assumedRoot: string | null;
-      sourceIdentity: string | null;
-      ec2RoleDelivery: string | null;
-    } | null;
-    onBehalfOf: {
-      userId: string | null;
-      identityStoreArn: string | null;
-    } | null;
-    inScopeOf: {
-      sourceArn: string | null;
-      sourceAccount: string | null;
-      issuerType: string | null;
-      credentialsIssuedTo: string | null;
-    } | null;
-    credentialId: string | null;
-    identityProvider: string | null;
-  } | null;
-  requestParameters: string | null;
-  responseElements: string | null;
-  additionalEventData: string | null;
-  serviceEventDetails: string | null;
-  resources: Array<{
-    ARN: string | null;
-    accountId: string | null;
-    type: string | null;
-  }> | null;
-  tlsDetails: string | null;
-  sharedEventID: string | null;
-
-  vpcEndpointAccountId: string | null;
-  eventCategory: string | null;
-  addendum: string | null;
-  sessionCredentialFromConsole: boolean | null;
-  eventContext: {
-    requestContext: string | null;
-    tagContext: string | null;
-  } | null;
-  edgeDeviceDetails: string | null;
-};
-
-type FlatRecordKeys = keyof FlatRecord;
-
-// ── Type helpers ──────────────────────────────────────────────────────────────
-const str = (v: unknown): string | null => (v == null ? null : String(v));
-const bool = (v: unknown): boolean | null =>
-  v == null ? null : v === true || v === "true";
-const ts = (v: unknown): bigint | null =>
-  v == null ? null : BigInt(new Date(v as string).getTime());
-const json = (v: unknown): string | null =>
-  v == null ? null : JSON.stringify(v);
-
-// Recursively redact known high-cardinality / sensitive keys that add no
-// analytical value when stored in Parquet (e.g. STS session tokens).
-const REDACTED_KEYS = new Set(["sessionToken", "x-amz-id-2"]);
-function redactSensitive(v: unknown): unknown {
-  if (v == null || typeof v !== "object") return v;
-  if (Array.isArray(v)) return v.map(redactSensitive);
-  const out: Record<string, unknown> = {};
-  for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
-    out[k] = REDACTED_KEYS.has(k) ? "-" : redactSensitive(val);
-  }
-  return out;
-}
-const jsonRedacted = (v: unknown): string | null =>
-  v == null ? null : JSON.stringify(redactSensitive(v));
 
 export enum CloudTrailVersion {
   VER_1_0,
@@ -154,7 +50,7 @@ function mf(
 // Hand matched to
 // We chose to match the order as per the docs
 // https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html
-export const SCHEMA = new arrow.Schema([
+export const Cloudtrail_arrow_schema = new arrow.Schema([
   // The date and time the request was completed, in coordinated universal time (UTC). An event's time
   // stamp comes from the local host that provides the service API endpoint on which the API call was
   // made. For example, a CreateBucket API event that is run in the US West (Oregon) Region would
@@ -173,7 +69,7 @@ export const SCHEMA = new arrow.Schema([
   // and 10 is the minor version.
   mf("eventVersion", new arrow.Utf8(), CloudTrailVersion.VER_1_0, false),
 
-  // userIdentity — nested struct; sessionContext serialised as a JSON string
+  // userIdentity — nested struct
   mf(
     "userIdentity",
     new arrow.Struct([
@@ -279,7 +175,7 @@ export const SCHEMA = new arrow.Schema([
   ),
 
   // The service that the request was made to. This name is typically a short form of the service name
-  // without spaces plus .amazonaws.com. For example:
+  // without spaces plus .amazonaws.com. For example,
   // CloudFormation is cloudformation.amazonaws.com.
   // Amazon EC2 is ec2.amazonaws.com.
   // Amazon Simple Workflow Service is swf.amazonaws.com.
@@ -382,16 +278,20 @@ export const SCHEMA = new arrow.Schema([
   // Identifies the type of event that generated the event record. This can be the one of the following values:
   //
   // AwsApiCall – An API was called.
-  // AwsServiceEvent – The service generated an event related to your trail. For example, this can occur when another account made a call with a resource that you own.
+  // AwsServiceEvent – The service generated an event related to your trail. For example, this can occur
+  // when another account made a call with a resource that you own.
   // AwsConsoleAction – An action was taken in the console that was not an API call.
   // AwsConsoleSignIn – A user in your account (root, IAM, federated, SAML, or SwitchRole) signed in to the AWS Management Console.
-  // AwsVpceEvents – CloudTrail network activity events enable VPC endpoint owners to record AWS API calls made using their VPC endpoints from a private VPC to the AWS service. To record network activity events, the VPC endpoint owner must enable network activity events for the event source.
+  // AwsVpceEvents – CloudTrail network activity events enable VPC endpoint owners to record AWS API
+  // calls made using their VPC endpoints from a private VPC to the AWS service. To record network
+  // activity events, the VPC endpoint owner must enable network activity events for the event source.
   mf("eventType", new arrow.Utf8(), CloudTrailVersion.VER_1_02, false),
 
   // Identifies the API version associated with the AwsApiCall eventType value.
   mf("apiVersion", new arrow.Utf8(), CloudTrailVersion.VER_1_01, true),
 
-  // A Boolean value that identifies whether the event is a management event. managementEvent is shown in an event record if eventVersion is 1.06 or higher, and the event type is one of the following:
+  // A Boolean value that identifies whether the event is a management event. managementEvent is shown in
+  // an event record if eventVersion is 1.06 or higher, and the event type is one of the following:
   //
   // AwsApiCall
   // AwsConsoleAction
@@ -498,212 +398,3 @@ export const SCHEMA = new arrow.Schema([
   // available TLS details are still logged in the CloudTrail event.
   mf("tlsDetails", new arrow.Utf8(), CloudTrailVersion.VER_1_08, true),
 ]);
-
-/**
- * Rather than writing out mixed parquet - we are upgrading all events to the "latest"
- * schema. This means we need to deal with previously empty fields (i.e. empty in "1.0")
- * that have been made mandatory in a later schema. For strings we handle this by
- * inserting a string indicating it was an allowed null from a previous schema.
- *
- * @param ver the event version from the event being serialised
- * @param firstVersionWithField the definitional version at which point this field was introduced
- * @param value the value being serialised
- */
-function throwIfNotAllowedMissingMandatoryString(
-  ver: string,
-  firstVersionWithField: string,
-  value: string | null,
-): string {
-  // if we have a value then we have no problem!
-  if (value != null) return value;
-
-  // if it is null we need to check if that is allowable - given it is a non-null field
-
-  const parts = ver.split(".");
-  const firstVersionParts = firstVersionWithField.split(".");
-
-  if (parts.length != 2 || firstVersionParts.length != 2)
-    throw new Error(`malformed eventVersion string of ${ver}`);
-
-  if (parseInt(parts[0]!) > parseInt(firstVersionParts[0]!))
-    throw new Error(
-      `this field was null but the event version of ${ver} means that it must be present`,
-    );
-
-  if (parseInt(parts[0]!) == parseInt(firstVersionParts[0]!)) {
-    if (parseInt(parts[1]!) >= parseInt(firstVersionParts[1]!))
-      throw new Error(
-        `this field was null but the event version of ${ver} means that it must be present`,
-      );
-  }
-
-  return `Pre${firstVersionWithField}SchemaNull`;
-}
-
-/**
- * Flattens the JSON structure expected from a CloudTrail event
- * and returns a converted record that matches exactly the
- * data we will be pushing into the Arrow table.
- * @param r
- */
-export function flattenRecord(r: any): FlatRecord {
-  const ui = r.userIdentity ?? {};
-  const ec = r.eventContext ?? {};
-
-  const ver = str(r.eventVersion);
-
-  if (!ver) throw new Error("eventVersion is a mandatory field");
-
-  return {
-    eventTime: ts(r.eventTime),
-    eventVersion: str(r.eventVersion),
-    userIdentity:
-      r.userIdentity == null
-        ? null
-        : {
-            type: str(ui.type),
-            principalId: str(ui.principalId),
-            arn: str(ui.arn),
-            accountId: str(ui.accountId),
-            accessKeyId: str(ui.accessKeyId),
-            userName: str(ui.userName),
-            invokedBy: str(ui.invokedBy),
-            invokedByDelegate:
-              ui.invokedByDelegate == null
-                ? null
-                : { accountId: str(ui.invokedByDelegate.accountId) },
-            sessionContext:
-              ui.sessionContext == null
-                ? null
-                : {
-                    sessionIssuer:
-                      ui.sessionContext.sessionIssuer == null
-                        ? null
-                        : {
-                            type: str(ui.sessionContext.sessionIssuer.type),
-                            userName: str(
-                              ui.sessionContext.sessionIssuer.userName,
-                            ),
-                            principalId: str(
-                              ui.sessionContext.sessionIssuer.principalId,
-                            ),
-                            arn: str(ui.sessionContext.sessionIssuer.arn),
-                            accountId: str(
-                              ui.sessionContext.sessionIssuer.accountId,
-                            ),
-                          },
-                    webIdFederationData:
-                      ui.sessionContext.webIdFederationData == null
-                        ? null
-                        : {
-                            federatedProvider: str(
-                              ui.sessionContext.webIdFederationData
-                                .federatedProvider,
-                            ),
-                            attributes:
-                              ui.sessionContext.webIdFederationData
-                                .attributes == null
-                                ? null
-                                : {
-                                    appid: str(
-                                      ui.sessionContext.webIdFederationData
-                                        .attributes.appid,
-                                    ),
-                                    aud: str(
-                                      ui.sessionContext.webIdFederationData
-                                        .attributes.aud,
-                                    ),
-                                  },
-                          },
-                    attributes:
-                      ui.sessionContext.attributes == null
-                        ? null
-                        : {
-                            creationDate: str(
-                              ui.sessionContext.attributes.creationDate,
-                            ),
-                            mfaAuthenticated: str(
-                              ui.sessionContext.attributes.mfaAuthenticated,
-                            ),
-                            sessionCredentialFromConsole: str(
-                              ui.sessionContext.attributes
-                                .sessionCredentialFromConsole,
-                            ),
-                          },
-                    assumedRoot: str(ui.sessionContext.assumedRoot),
-                    sourceIdentity: str(ui.sessionContext.sourceIdentity),
-                    ec2RoleDelivery: str(ui.sessionContext.ec2RoleDelivery),
-                  },
-            onBehalfOf:
-              ui.onBehalfOf == null
-                ? null
-                : {
-                    userId: str(ui.onBehalfOf.userId),
-                    identityStoreArn: str(ui.onBehalfOf.identityStoreArn),
-                  },
-            inScopeOf:
-              ui.inScopeOf == null
-                ? null
-                : {
-                    sourceArn: str(ui.inScopeOf.sourceArn),
-                    sourceAccount: str(ui.inScopeOf.sourceAccount),
-                    issuerType: str(ui.inScopeOf.issuerType),
-                    credentialsIssuedTo: str(ui.inScopeOf.credentialsIssuedTo),
-                  },
-            credentialId: str(ui.credentialId),
-            identityProvider: str(ui.identityProvider),
-          },
-    eventSource: str(r.eventSource),
-    eventName: str(r.eventName),
-    awsRegion: str(r.awsRegion),
-    sourceIPAddress: str(r.sourceIPAddress),
-    userAgent: str(r.userAgent),
-    errorCode: str(r.errorCode),
-    errorMessage: str(r.errorMessage),
-    requestParameters: json(r.requestParameters),
-    responseElements: jsonRedacted(r.responseElements),
-    additionalEventData: jsonRedacted(r.additionalEventData),
-    requestID: str(r.requestID),
-    eventID: throwIfNotAllowedMissingMandatoryString(
-      ver,
-      "1.01",
-      str(r.eventID),
-    ),
-    eventType: throwIfNotAllowedMissingMandatoryString(
-      ver,
-      "1.02",
-      str(r.eventType),
-    ),
-    apiVersion: str(r.apiVersion),
-    managementEvent: bool(r.managementEvent) ?? false,
-    readOnly: bool(r.readOnly) ?? false,
-    resources: Array.isArray(r.resources)
-      ? (r.resources as any[]).map((res: any) => ({
-          ARN: str(res.ARN),
-          accountId: str(res.accountId),
-          type: str(res.type),
-        }))
-      : null,
-    recipientAccountId: str(r.recipientAccountId),
-    serviceEventDetails: json(r.serviceEventDetails),
-    sharedEventID: str(r.sharedEventID),
-    vpcEndpointId: str(r.vpcEndpointId),
-    vpcEndpointAccountId: str(r.vpcEndpointAccountId),
-    eventCategory: throwIfNotAllowedMissingMandatoryString(
-      ver,
-      "1.07",
-      str(r.eventCategory),
-    ),
-    addendum: json(r.addendum),
-    sessionCredentialFromConsole: bool(r.sessionCredentialFromConsole) ?? false,
-    eventContext:
-      r.eventContext == null
-        ? null
-        : {
-            requestContext: json(ec.requestContext),
-            tagContext: json(ec.tagContext),
-          },
-    edgeDeviceDetails: json(r.edgeDeviceDetails),
-    tlsDetails: json(r.tlsDetails),
-  };
-}

@@ -19,6 +19,9 @@ RUN bun build ./src/entrypoint_handler.ts \
       --target bun \
       --minify
 
+# The lambda runtime is separate standalone code that is invoked
+# by the actual lambda infrastructure and translates into
+# an invoke at our entryoint_handler
 RUN bun build ./src/entrypoint_lambda_runtime.ts \
       --outfile dist/runtime.js \
       --target bun \

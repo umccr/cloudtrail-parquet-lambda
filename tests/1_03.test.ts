@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test";
-import { readParquetBuffer } from "./hyparquet_helper";
-import { getFirstConversion } from "./convert_helper";
+import { readParquetBuffer } from "./helpers/hyparquet_helper";
+import { getFirstConversion } from "./helpers/convert_helper";
 
 test("1.03", async () => {
   const pq = await getFirstConversion("test_input/examples/1_03.json", "2016-03-14");

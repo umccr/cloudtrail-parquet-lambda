@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test";
-import { readParquetBuffer } from "./hyparquet_helper";
-import { getFirstConversion } from "./convert_helper";
+import { readParquetBuffer } from "./helpers/hyparquet_helper";
+import { getFirstConversion } from "./helpers/convert_helper";
 
 test("federated", async () => {
   const pq = await getFirstConversion("test_input/examples/federated.json", "2024-08-10");

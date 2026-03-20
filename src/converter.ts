@@ -1,62 +1,12 @@
 import { RecordBatch } from "apache-arrow";
 import { streamRecords } from "./reader";
-import { flattenRecord } from "./schema";
+import { flattenRecord } from "./cloudtrail_to_arrow";
 import { buildBatch, writeBatchesToParquet, writeBytes } from "./writer";
 import { Compression } from "parquet-wasm/node";
 import { listChildFolders } from "./lister_folders";
 import { listChildFiles } from "./lister_files";
-
-// Events matching these (eventSource, eventName) pairs are discarded during
-// conversion — high-volume automated operations with minimal analytical value.
-// For KMS only the automated crypto operations are dropped; management events
-// (CreateKey, PutKeyPolicy, ScheduleKeyDeletion, etc.) are kept.
-const DISCARDED_EVENTS: Map<string, Set<string>> = new Map([
-  [
-    "kms.amazonaws.com",
-    new Set([
-      // Crypto operations called constantly by AWS services (S3, EBS,
-      // Secrets Manager, etc.) — not user-triggered.
-      "Decrypt",
-      "Encrypt",
-      "GenerateDataKey",
-      "GenerateDataKeyWithoutPlaintext",
-      "GenerateDataKeyPair",
-      "GenerateDataKeyPairWithoutPlaintext",
-      "ReEncryptFrom",
-      "ReEncryptTo",
-      "Sign",
-      "Verify",
-      // Read-only describe/list noise.
-      "DescribeKey",
-      "GetKeyPolicy",
-      "GetKeyRotationStatus",
-      "GetPublicKey",
-      "ListAliases",
-      "ListGrants",
-      "ListKeyPolicies",
-      "ListKeys",
-      "ListResourceTags",
-      "ListRetirableGrants",
-    ]),
-  ],
-  [
-    "rds.amazonaws.com",
-    new Set([
-      // High-frequency automated describe/monitoring calls.
-      "DescribeDBInstances",
-      "DescribeDBClusters",
-      "DescribeDBLogFiles",
-      "DescribeEvents",
-      "DescribeDBEngineVersions",
-      "DescribeDBParameterGroups",
-      "DescribeDBParameters",
-      "DescribeDBSubnetGroups",
-      "DescribeOptionGroups",
-      "DescribePendingMaintenanceActions",
-      "DownloadDBLogFilePortion",
-    ]),
-  ],
-]);
+import { shouldDiscard } from "./discarder";
+import { redact } from "./redactor";
 
 /**
  * Enumerates through a set of CloudTrail folders and writes out
@@ -113,7 +63,7 @@ export async function convertSingleDayCloudTrailToParquets(
       continue;
     }
     console.log(
-      `Inspecting region ${region} in account ${accountId} gives the following log sample path ${logsOfInterest[0]} and length ${logsOfInterest.length}\n`
+      `Inspecting region ${region} in account ${accountId} gives the following log sample path ${logsOfInterest[0]} and length ${logsOfInterest.length}\n`,
     );
 
     let parquetCounter = 0;
@@ -128,8 +78,8 @@ export async function convertSingleDayCloudTrailToParquets(
       const base = baseOutputPath ? baseOutputPath : "<outputPath>/";
 
       const output = organisationId
-        ? `${base}AWSLogsParquet/CloudTrail/${organisationId}/account=${accountId}/region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
-        : `${base}AWSLogsParquet/CloudTrail/account=${accountId}/region=${region}year=${yearString}/month=${monthString}/day=${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
+        ? `${base}AWSLogsParquet/CloudTrail/${organisationId}/account=${accountId}/region=${region}dt=${yearString}-${monthString}-${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`
+        : `${base}AWSLogsParquet/CloudTrail/account=${accountId}/region=${region}dt=${yearString}-${monthString}-${dayString}/${parquetCounter.toString().padStart(5, "0")}.parquet`;
 
       if (baseOutputPath) {
         console.log(
@@ -250,11 +200,12 @@ export async function* convertSingle(
     // stream records continuously from each one
     // and build batches
     for await (const record of streamRecords(logFilePath, eventTimePrefix)) {
-      if (DISCARDED_EVENTS.get(record.eventSource)?.has(record.eventName)) continue;
+      const flat = redact(flattenRecord(record));
+      if (shouldDiscard(flat)) continue;
 
       recordsFound++;
 
-      buffer.push(flattenRecord(record));
+      buffer.push(flat);
 
       // construct row groups (batches) to help facilitate slicing within
       // a single parquet file

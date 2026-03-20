@@ -6,11 +6,12 @@ import {
   writeParquet,
   WriterPropertiesBuilder,
 } from "parquet-wasm/node";
-import { type FlatRecord, SCHEMA } from "./schema";
+import { Cloudtrail_arrow_schema } from "./cloudtrail_arrow_schema";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { mkdir, writeFile } from "node:fs/promises";
 import { isS3Uri, parseS3Uri } from "./s3_uri";
 import { dirname } from "node:path";
+import type { FlatRecord } from "./cloudtrail_to_arrow";
 
 // ── Build a typed column Vector via Builder (correctly handles nulls) ─────────
 function buildCol<T extends arrow.DataType>(
@@ -37,18 +38,18 @@ function buildCol<T extends arrow.DataType>(
 // declared schema (including nullability) is used directly rather than inferred
 // from the column data.
 export function buildBatch(rows: FlatRecord[]): arrow.RecordBatch {
-  const childData = SCHEMA.fields.map((field: arrow.Field) => {
+  const childData = Cloudtrail_arrow_schema.fields.map((field: arrow.Field) => {
     const values = rows.map((r) => r[field.name as keyof FlatRecord]);
     return buildCol(field.type, values);
   });
 
   const structData = arrow.makeData({
-    type: new arrow.Struct(SCHEMA.fields),
+    type: new arrow.Struct(Cloudtrail_arrow_schema.fields),
     children: childData,
     length: rows.length,
   });
 
-  return new arrow.RecordBatch(SCHEMA, structData);
+  return new arrow.RecordBatch(Cloudtrail_arrow_schema, structData);
 }
 
 // ── Write Arrow RecordBatches to a Parquet file via IPC bridge ────────────────
@@ -56,7 +57,7 @@ export async function writeBatchesToParquet(
   batches: arrow.RecordBatch[],
   compression: Compression,
 ): Promise<Uint8Array> {
-  const arrowTable = new arrow.Table(SCHEMA, batches);
+  const arrowTable = new arrow.Table(Cloudtrail_arrow_schema, batches);
 
   // parquet-wasm has its own Table type — bridge via Arrow IPC stream bytes
   const ipcBytes = arrow.tableToIPC(arrowTable, "stream");

@@ -34,7 +34,6 @@ function resolveDate(processDate: string): {
       month: t.getUTCMonth() + 1,
       day: t.getUTCDate(),
     };
-
   } else if (processDate === "yesterday") {
     const t = new Date();
     t.setUTCDate(t.getUTCDate() - 1);
@@ -43,8 +42,7 @@ function resolveDate(processDate: string): {
       month: t.getUTCMonth() + 1,
       day: t.getUTCDate(),
     };
-  }
-  else {
+  } else {
     const [y, m, d] = processDate.split("-").map(Number);
     if (!y || !m || !d)
       throw new Error(
@@ -98,7 +96,7 @@ export async function handler(
     month,
     day,
     50000,
-    5
+    5,
   );
 
   console.log(`Done processing CloudTrail logs for ${event.accountId}`);

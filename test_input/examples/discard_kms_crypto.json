@@ -95,6 +95,50 @@
           }
         }
       },
+      "eventTime": "2023-11-01T09:08:00Z",
+      "eventSource": "kms.amazonaws.com",
+      "eventName": "Decrypt",
+      "awsRegion": "ap-southeast-2",
+      "sourceIPAddress": "203.0.113.77",
+      "userAgent": "aws-cli/2.13.5 Python/3.11.4",
+      "requestParameters": {
+        "keyId": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-KEEP0002",
+        "encryptionContext": { "Purpose": "test" }
+      },
+      "responseElements": null,
+      "requestID": "KEEPREQID00003",
+      "eventID": "KEEP-0003-5678-abcd-EXAMPLE00004",
+      "readOnly": true,
+      "resources": [
+        {
+          "accountId": "111122223333",
+          "type": "AWS::KMS::Key",
+          "ARN": "arn:aws:kms:ap-southeast-2:111122223333:key/mrk-KEEP0002"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "111122223333",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGITEXAMPLE",
+        "arn": "arn:aws:iam::111122223333:user/Alice",
+        "accountId": "111122223333",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Alice",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "creationDate": "2023-11-01T09:00:00Z",
+            "mfaAuthenticated": "true"
+          }
+        }
+      },
       "eventTime": "2023-11-01T09:10:00Z",
       "eventSource": "kms.amazonaws.com",
       "eventName": "CreateKey",
